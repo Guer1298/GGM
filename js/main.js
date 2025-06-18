@@ -92,3 +92,30 @@ function initNavMenu() {
   }
 }
 
+function initNavMenu() {
+  const toggleBtn = document.querySelector(".nav-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  if (toggleBtn && navMenu) {
+    toggleBtn.addEventListener("click", () => {
+      const expanded = toggleBtn.getAttribute("aria-expanded") === "true";
+      toggleBtn.setAttribute("aria-expanded", String(!expanded));
+      navMenu.classList.toggle("nav-open");
+    });
+
+    // Opcional: cerrar menú al hacer clic en un enlace
+    navMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("nav-open");
+        toggleBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+}
+
+// Después de cargar el header
+loadComponent('#header', 'components/header.html').then(() => {
+  initNavMenu();
+});
+
+

@@ -79,19 +79,44 @@ footer {
 /* ==============================
    Navegación
 ============================== */
+/* ==============================
+   Navbar - Estilo Profesional
+============================== */
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 0.5rem var(--espaciado);
+  padding: 0.75rem var(--espaciado);
+  background-color: var(--color-principal);
+  position: relative;
+  z-index: 1000;
 }
 
 .navbar-container {
-  position: relative;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+/* --- Logo --- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.logo img {
+  height: 48px;
+}
+
+/* --- Enlaces de navegación --- */
 .nav-links {
   list-style: none;
   display: flex;
@@ -104,21 +129,61 @@ footer {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  transition: var(--animacion-suave);
+  transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: var(--color-acento);
+.nav-links a:hover,
+.nav-links a:focus {
+  color: var(--color-acento, #ffd54f);
 }
 
+/* --- Botón hamburguesa --- */
 .nav-toggle {
   display: none;
-  font-size: 1.8rem;
+  font-size: 2rem;
   background: none;
   border: none;
   color: white;
   cursor: pointer;
 }
+
+/* ==============================
+   Responsive - Mobile Navigation
+============================== */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 64px;
+    right: 0;
+    width: 100%;
+    display: none;
+    padding: 1rem;
+    box-shadow: var(--sombra, 0 4px 6px rgba(0, 0, 0, 0.1));
+    border-radius: 0 0 var(--radio-borde) var(--radio-borde);
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .nav-links a {
+    color: var(--color-principal);
+    padding: 0.5rem 0;
+  }
+
+  .nav-links.nav-open {
+    display: flex;
+  }
+}
+
+
 
 /* ==============================
    Hero Section
