@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- SEO -->
+  <title>Contacto | Fundación Educativa Gabriel García Márquez</title>
+  <meta name="description" content="Comunícate con la Fundación GGM. Resolvemos tus dudas, recibimos propuestas y establecemos contacto para apoyarte o trabajar juntos.">
+  <meta name="keywords" content="contacto, correo, dirección, Popayán, fundación educativa, Fundación GGM, colaboración, mensaje, voluntariado">
+  <meta name="author" content="Fundación Educativa Gabriel García Márquez">
+  <meta name="robots" content="index, follow" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/contacto.css"/>
+  <link rel="icon" href="../assets/img/favicon.png" type="image/png" />
+</head>
+<body>
+
+  <!-- Header dinámico -->
+  <div id="header" role="banner" aria-label="Encabezado del sitio"></div>
+
+  <main class="container contacto" role="main">
+    <!-- Introducción -->
+    <section class="hero-section" aria-labelledby="titulo-contacto">
+      <h1 id="titulo-contacto">Contáctanos</h1>
+      <p class="lead">
+        Estamos para escucharte. Si deseas más información sobre nuestros programas, donaciones o deseas colaborar con nuestra misión, escríbenos o visítanos.
+      </p>
+    </section>
+
+    <!-- Formulario -->
+    <section class="formulario-contacto" aria-labelledby="titulo-formulario">
+      <h2 id="titulo-formulario">Escríbenos un mensaje</h2>
+      <form action="#" method="post" aria-describedby="instruccion-formulario">
+        <p id="instruccion-formulario" class="form-info">Todos los campos marcados con * son obligatorios.</p>
+
+        <label for="name">Nombre completo *</label>
+        <input type="text" id="name" name="name" required placeholder="Ej: Juan Pérez" autocomplete="name">
+
+        <label for="email">Correo electrónico *</label>
+        <input type="email" id="email" name="email" required placeholder="Ej: correo@ejemplo.com" autocomplete="email">
+
+        <label for="subject">Asunto *</label>
+        <input type="text" id="subject" name="subject" required placeholder="Ej: Consulta sobre becas">
+
+        <label for="message">Mensaje *</label>
+        <textarea id="message" name="message" rows="6" required placeholder="Escribe tu mensaje aquí..."></textarea>
+
+        <button type="submit" class="btn" aria-label="Enviar mensaje de contacto">Enviar mensaje</button>
+      </form>
+    </section>
+
+    <!-- Datos de contacto -->
+    <section class="informacion-contacto" aria-labelledby="titulo-info">
+      <h2 id="titulo-info">Información de contacto</h2>
+      <ul>
+        <li><strong>Correo:</strong> contacto@fundacionggm.org</li>
+        <li><strong>Teléfono:</strong> +57 310 000 0000</li>
+        <li><strong>Dirección:</strong> Calle 123 #45-67, Popayán, Colombia</li>
+        <li><strong>Horario:</strong> Lunes a viernes, 8:00 a.m. – 4:00 p.m.</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer dinámico -->
+  <div id="footer" role="contentinfo" aria-label="Pie de página del sitio"></div>
+
+  <!-- Scripts -->
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

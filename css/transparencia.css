@@ -1,0 +1,104 @@
+/* ===============================
+   TRANSPARENCIA INSTITUCIONAL
+   Estilos específicos de sección
+================================= */
+
+.transparencia {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #333;
+}
+
+/* Hero / Introducción */
+.hero-section {
+  background: linear-gradient(to right, #e0f2f1, #f1f8e9);
+  padding: 3.5rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.hero-section .lead {
+  font-size: 1.2rem;
+  max-width: 720px;
+  margin: 1rem auto;
+  color: #1a1a1a;
+}
+
+/* Documentos Públicos */
+.documentos-section {
+  margin-top: 3rem;
+}
+
+.documentos-section h2 {
+  margin-bottom: 1rem;
+}
+
+.document-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.document-list li {
+  background-color: #fdfdfd;
+  border-left: 4px solid #0e3a5d;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.document-list a {
+  color: #0e3a5d;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.document-list a:hover {
+  text-decoration: underline;
+  color: #1565c0;
+}
+
+/* Cumplimiento Normativo */
+.legal-section {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #f1f8ff;
+  border-left: 4px solid #1e88e5;
+  border-radius: 6px;
+}
+
+.legal-list {
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+
+.legal-list li {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+/* Alianzas */
+.alianzas-section {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #fef9e7;
+  border-left: 4px solid #fbc02d;
+  border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .document-list li {
+    font-size: 0.95rem;
+  }
+
+  .legal-section,
+  .alianzas-section {
+    padding: 1.5rem;
+  }
+}

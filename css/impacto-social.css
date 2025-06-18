@@ -1,0 +1,113 @@
+/* ================================
+   IMPACTO SOCIAL - ESTILOS DEDICADOS
+================================ */
+
+.impacto-social {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #333;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(to right, #fff3e0, #f1f8e9);
+  padding: 4rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.hero-section .lead {
+  font-size: 1.2rem;
+  max-width: 720px;
+  margin: 1rem auto;
+  color: #1a1a1a;
+}
+
+/* Programas que Transforman */
+.programas-section {
+  margin-top: 3rem;
+}
+
+.program-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.program-list li {
+  background-color: #fdfdfd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 5px solid #2e7d32;
+  border-radius: 6px;
+}
+
+/* Testimonios */
+.testimonios-section {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #f3f7f9;
+  border-left: 5px solid #1976d2;
+  border-radius: 6px;
+}
+
+.testimonios-section blockquote {
+  font-style: italic;
+  margin: 1.5rem 0;
+  background: #ffffff;
+  padding: 1rem;
+  border-left: 5px solid #90caf9;
+  border-radius: 5px;
+}
+
+.testimonios-section cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #0d47a1;
+}
+
+/* Métricas de impacto */
+.metricas-section {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #e8f5e9;
+  border-left: 5px solid #43a047;
+  border-radius: 6px;
+}
+
+.impact-metrics {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.impact-metrics li {
+  background-color: #ffffff;
+  padding: 1.25rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: 2px solid #c8e6c9;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.impact-metrics li:hover {
+  transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1rem;
+  }
+
+  .impact-metrics li {
+    font-size: 1rem;
+  }
+}

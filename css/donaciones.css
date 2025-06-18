@@ -1,0 +1,105 @@
+/* ================================
+   DONACIONES Y ALIANZAS
+   Estilos específicos
+================================ */
+
+.donaciones {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #333;
+}
+
+/* Hero principal */
+.hero-section {
+  background: linear-gradient(to right, #fff3e0, #e0f7fa);
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.hero-section .lead {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 1rem auto;
+  color: #1a1a1a;
+}
+
+/* Sección: Formas de Donar */
+.formas-donar {
+  margin-top: 3rem;
+}
+
+.donation-methods {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.donation-methods li {
+  background-color: #fdfdfd;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid #2e7d32;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.donation-methods li:hover {
+  background-color: #f1f8e9;
+}
+
+/* Sección: Padrinazgo */
+.padrinazgo {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #f9fbe7;
+  border-left: 4px solid #c0ca33;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.padrinazgo .btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #0e3a5d;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.padrinazgo .btn:hover {
+  background-color: #164d79;
+}
+
+/* Sección: Alianzas */
+.alianzas {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #fffde7;
+  border-left: 4px solid #fbc02d;
+  border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1rem;
+  }
+
+  .donation-methods li {
+    font-size: 0.95rem;
+  }
+
+  .padrinazgo,
+  .alianzas {
+    padding: 1.5rem;
+  }
+
+  .padrinazgo .btn {
+    width: 100%;
+    display: inline-block;
+  }
+}

@@ -1,0 +1,87 @@
+/* ===========================
+   EDUCACIÓN CRISTIANA
+   Estilos específicos de sección
+=========================== */
+
+.educacion-cristiana {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #333;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(to right, #e3f2fd, #e8f5e9);
+  padding: 4rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.hero-section .lead {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 1rem auto;
+  color: #1a1a1a;
+}
+
+/* Principios Fundamentales */
+.principios-section {
+  margin-top: 3rem;
+}
+
+.values-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.values-list li {
+  background-color: #f9fbfc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 5px solid #0e3a5d;
+  border-radius: 5px;
+}
+
+/* Metodología */
+.metodologia-section {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: #f3f9f6;
+  border-left: 4px solid #388e3c;
+  border-radius: 6px;
+}
+
+.metodologia-section h2 {
+  color: #2e7d32;
+}
+
+/* Impacto Espiritual */
+.impacto-section {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: #fdf3e7;
+  border-left: 4px solid #ef6c00;
+  border-radius: 6px;
+}
+
+.impacto-section h2 {
+  color: #d84315;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1rem;
+  }
+
+  .values-list li {
+    font-size: 0.95rem;
+  }
+
+  .metodologia-section,
+  .impacto-section {
+    padding: 1rem;
+  }
+}

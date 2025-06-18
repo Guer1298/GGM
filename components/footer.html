@@ -1,0 +1,46 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-container">
+    
+    <!-- Información institucional -->
+    <div class="footer-info">
+      <h2>Fundación Educativa Gabriel García Márquez</h2>
+      <p>Formamos con propósito eterno desde Popayán, Colombia.</p>
+      <p>NIT: 817.004.815-8</p>
+    </div>
+
+    <!-- Enlaces rápidos -->
+    <div class="footer-links">
+      <h3>Enlaces útiles</h3>
+      <ul>
+        <li><a href="../pages/quienes-somos.html">¿Quiénes Somos?</a></li>
+        <li><a href="../pages/transparencia.html">Transparencia</a></li>
+        <li><a href="../pages/donaciones.html">Donaciones</a></li>
+        <li><a href="../pages/contacto.html">Contáctanos</a></li>
+      </ul>
+    </div>
+
+    <!-- Redes sociales -->
+    <div class="footer-social">
+      <h3>Síguenos</h3>
+      <ul class="social-icons">
+        <li><a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><img src="../assets/img/facebook.svg" alt="Facebook" /></a></li>
+        <li><a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><img src="../assets/img/instagram.svg" alt="Instagram" /></a></li>
+        <li><a href="https://www.youtube.com/" target="_blank" aria-label="YouTube"><img src="../assets/img/youtube.svg" alt="YouTube" /></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Sección legal y año automático -->
+  <div class="footer-bottom">
+    <ul class="legal-links">
+      <li><a href="#">Política de Privacidad</a></li>
+      <li><a href="#">Tratamiento de Datos</a></li>
+      <li><a href="#">Términos y Condiciones</a></li>
+    </ul>
+    <p>&copy; <span id="year"></span> Fundación GGM. Todos los derechos reservados.</p>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</footer>

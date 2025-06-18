@@ -1,0 +1,113 @@
+/* =====================================
+   CONTACTO - Estilos específicos
+===================================== */
+
+.contacto {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #333;
+}
+
+/* Hero principal */
+.hero-section {
+  background: linear-gradient(to right, #e3f2fd, #f1f8e9);
+  padding: 4rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.hero-section .lead {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 1rem auto;
+  color: #1a1a1a;
+}
+
+/* Formulario */
+.formulario-contacto {
+  margin-top: 3rem;
+  background-color: #fafafa;
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.formulario-contacto label {
+  display: block;
+  margin-top: 1.5rem;
+  font-weight: 600;
+  color: #0e3a5d;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border 0.2s ease;
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+  border-color: #0e3a5d;
+  outline: none;
+}
+
+.formulario-contacto .form-info {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* Botón */
+.formulario-contacto .btn {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #0e3a5d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-contacto .btn:hover {
+  background-color: #164d79;
+}
+
+/* Información de contacto */
+.informacion-contacto {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #f3faff;
+  border-left: 4px solid #1976d2;
+  border-radius: 6px;
+}
+
+.informacion-contacto ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.informacion-contacto li {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1rem;
+  }
+
+  .formulario-contacto,
+  .informacion-contacto {
+    padding: 1.5rem;
+  }
+}
