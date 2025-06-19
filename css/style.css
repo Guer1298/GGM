@@ -655,6 +655,45 @@ footer a:focus {
   margin-bottom: 0.5rem;
 }
 
+.footer-social {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer-social h3 {
+  font-size: 1.2rem;
+  color: var(--color-principal, #0e3a5d);
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-principal, #0e3a5d);
+  color: #fff;
+  font-size: 1.25rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+  background-color: var(--color-acento, #ffd54f);
+  color: #0e3a5d;
+  transform: scale(1.1);
+}
+
+
 /* ==============================
    Responsive
 ============================== */
