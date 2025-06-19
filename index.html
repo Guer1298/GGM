@@ -10,7 +10,9 @@
   <title>Fundación GGM - Educación con Propósito Eterno</title>
   <link rel="icon" href="./assets/img/favicon.png" type="image/png" />
   <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/styles.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+
 </head>
 <body>
 
@@ -18,53 +20,91 @@
   <div id="header"></div>
 
   <main class="container home">
-    <!-- Hero principal -->
-    <section class="hero fade-in">
+    <!-- Hero principal con imagen de fondo -->
+    <section class="hero fade-in" style="background: linear-gradient(rgba(14,58,93,0.6), rgba(14,58,93,0.6)), url('./assets/img/hero-colegio.jpg') center/cover no-repeat; color: white;">
       <h1>Educación con Propósito Eterno</h1>
       <p class="lead">Formamos integralmente desde una cosmovisión cristiana, con impacto social real en nuestras comunidades.</p>
       <a href="./pages/quienes-somos.html" class="btn">Conócenos</a>
     </section>
 
-    <!-- Sección de valores -->
+    <!-- Sección de valores con íconos -->
     <section class="valores-section fade-in">
       <h2>Nuestros Pilares</h2>
       <div class="valores-grid">
-        <article><strong>Fe</strong><p>Es el fundamento de todo lo que hacemos.</p></article>
-        <article><strong>Excelencia</strong><p>Formación académica con altos estándares éticos y profesionales.</p></article>
-        <article><strong>Servicio</strong><p>Vivimos el amor al prójimo con acciones concretas.</p></article>
-        <article><strong>Integridad</strong><p>Actuamos con verdad, coherencia y transparencia.</p></article>
+        <article>
+          <img src="./assets/img/fe.png" alt="Fe" class="icono-valor" />
+          <strong>Fe</strong>
+          <p>Es el fundamento de todo lo que hacemos.</p>
+        </article>
+        <article>
+          <img src="./assets/img/excelencia.png" alt="Excelencia" class="icono-valor" />
+          <strong>Excelencia</strong>
+          <p>Formación académica con altos estándares éticos y profesionales.</p>
+        </article>
+        <article>
+          <img src="./assets/img/projimo.png" alt="Servicio" class="icono-valor" />
+          <strong>Servicio</strong>
+          <p>Vivimos el amor al prójimo con acciones concretas.</p>
+        </article>
+        <article>
+          <img src="./assets/img/integridad.png" alt="Integridad" class="icono-valor" />
+          <strong>Integridad</strong>
+          <p>Actuamos con verdad, coherencia y transparencia.</p>
+        </article>
       </div>
     </section>
 
-    <!-- Sección de impacto destacado -->
+    <!-- Sección de impacto destacado con íconos o imágenes -->
     <section class="impacto-resumen fade-in">
       <h2>+15 Años de Impacto Transformador</h2>
       <ul class="impact-metrics">
-        <li><strong>500+</strong> estudiantes becados</li>
-        <li><strong>50+</strong> comunidades beneficiadas</li>
-        <li><strong>120+</strong> padrinos activos</li>
-        <li><strong>100%</strong> de enfoque en valores</li>
-      </ul>
+  <li>
+    <i data-lucide="graduation-cap"></i>
+    <strong>500+</strong><br>Estudiantes becados
+  </li>
+  <li>
+    <i data-lucide="users"></i>
+    <strong>50+</strong><br>Comunidades beneficiadas
+  </li>
+  <li>
+    <i data-lucide="hand-heart"></i>
+    <strong>120+</strong><br>Padrinos activos
+  </li>
+  <li>
+    <i data-lucide="book-heart"></i>
+    <strong>100%</strong><br>Educación en valores
+  </li>
+</ul>
+
     </section>
 
-    <!-- Llamado a la acción destacado -->
-    <section class="llamado-accion fade-in">
+    <!-- Llamado a la acción destacado con imagen -->
+    <section class="llamado-accion fade-in" style="background-color: #e0f2f1; text-align: center;">
+      <img src="./assets/img/niños.png" alt="Niños sonriendo" style="width: 100%; border-radius: 6px; margin-bottom: 1rem;" />
       <h2>¿Quieres transformar una vida?</h2>
       <p>Con tu ayuda, podemos llevar educación y esperanza a más familias.</p>
       <a href="./pages/donaciones.html" class="btn">Dona Ahora</a>
     </section>
 
-    <!-- Testimonios -->
+    <!-- Testimonios con imagen y formato tarjeta -->
     <section class="testimonios fade-in">
       <h2>Testimonios que Inspiran</h2>
-      <blockquote>
-        “Mi hijo llegó sin rumbo. Hoy sueña con ser ingeniero. Gracias Fundación GGM.”
-        <cite>— Sandra, madre beneficiaria</cite>
-      </blockquote>
-      <blockquote>
-        “Nos enseñan con amor, como si fuéramos su familia. Aquí encontré propósito.”
-        <cite>— Camilo, estudiante</cite>
-      </blockquote>
+      <div class="testimonios-grid">
+        <article class="testimonio-card">
+          
+          <blockquote>
+            “Mi hijo llegó sin rumbo. Hoy sueña con ser ingeniero. Gracias Fundación GGM.”
+          </blockquote>
+          <cite>— Sandra, madre beneficiaria</cite>
+        </article>
+        <article class="testimonio-card">
+          
+          <blockquote>
+            “Nos enseñan con amor, como si fuéramos su familia. Aquí encontré propósito.”
+          </blockquote>
+          <cite>— Camilo, estudiante</cite>
+        </article>
+      </div>
     </section>
 
     <!-- Enlaces rápidos -->
@@ -83,5 +123,9 @@
 
   <!-- Script -->
   <script src="./js/main.js" defer></script>
+  <script>
+  lucide.createIcons();
+</script>
+
 </body>
 </html>

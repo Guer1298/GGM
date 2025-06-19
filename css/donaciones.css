@@ -1,105 +1,177 @@
-/* ================================
-   DONACIONES Y ALIANZAS
-   Estilos específicos
-================================ */
+/* ===============================
+   DONACIONES Y ALIANZAS – ESTILOS
+================================= */
 
 .donaciones {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   color: #333;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Hero principal */
+/* Hero */
 .hero-section {
-  background: linear-gradient(to right, #fff3e0, #e0f7fa);
+  background: linear-gradient(to right, #fff8e1, #f1f8e9);
   padding: 4rem 2rem;
   text-align: center;
   border-radius: 8px;
+  position: relative;
+}
+
+.hero-section .hero-image {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.hero-section h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  color: #2e7d32;
 }
 
 .hero-section .lead {
   font-size: 1.2rem;
-  max-width: 700px;
-  margin: 1rem auto;
+  max-width: 720px;
+  margin: 0 auto;
   color: #1a1a1a;
 }
 
-/* Sección: Formas de Donar */
-.formas-donar {
+/* Secciones generales */
+section {
   margin-top: 3rem;
 }
 
+/* Lista de métodos de donación */
 .donation-methods {
   list-style: none;
   padding-left: 0;
-  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .donation-methods li {
-  background-color: #fdfdfd;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
+  background: #fdfdfd;
   border-left: 5px solid #2e7d32;
+  padding: 1.5rem;
   border-radius: 6px;
-  transition: background-color 0.3s ease;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .donation-methods li:hover {
-  background-color: #f1f8e9;
+  transform: scale(1.02);
 }
 
-/* Sección: Padrinazgo */
+.donation-methods .icon {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-bottom: 0.75rem;
+}
+
+/* Padrinazgo */
 .padrinazgo {
-  margin-top: 3rem;
+  background-color: #e3f2fd;
   padding: 2rem;
-  background-color: #f9fbe7;
-  border-left: 4px solid #c0ca33;
+  border-left: 5px solid #1565c0;
   border-radius: 6px;
-  text-align: center;
 }
 
-.padrinazgo .btn {
+.padrinazgo .btn-secondary {
   margin-top: 1rem;
+  background-color: #1565c0;
+  color: white;
   padding: 0.75rem 1.5rem;
-  background-color: #0e3a5d;
-  color: #fff;
+  border-radius: 4px;
   text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
+  display: inline-block;
   transition: background-color 0.3s ease;
 }
 
-.padrinazgo .btn:hover {
-  background-color: #164d79;
+.padrinazgo .btn-secondary:hover {
+  background-color: #0d47a1;
 }
 
-/* Sección: Alianzas */
+/* Alianzas */
 .alianzas {
-  margin-top: 3rem;
-  padding: 2rem;
   background-color: #fffde7;
-  border-left: 4px solid #fbc02d;
+  padding: 2rem;
+  border-left: 5px solid #fbc02d;
   border-radius: 6px;
+}
+
+.alianzas .btn {
+  margin-top: 1rem;
+}
+
+/* CTA final */
+.cta-donaciones {
+  margin-top: 4rem;
+  background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 0 6px #ffffff, 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.cta-donaciones h2 {
+  font-size: 2rem;
+  color: #2e7d32;
+  margin-bottom: 1rem;
+}
+
+.cta-donaciones p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+.cta-donaciones .btn-primary {
+  background-color: #43a047;
+  color: white;
+  padding: 0.85rem 2rem;
+  font-weight: bold;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-donaciones .btn-primary:hover {
+  background-color: #2e7d32;
+}
+
+/* Botón genérico */
+.btn {
+  background-color: #388e3c;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #2e7d32;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero-section {
-    padding: 3rem 1rem;
+  .hero-section h1 {
+    font-size: 1.8rem;
   }
 
-  .donation-methods li {
-    font-size: 0.95rem;
+  .cta-donaciones h2 {
+    font-size: 1.6rem;
   }
 
-  .padrinazgo,
-  .alianzas {
-    padding: 1.5rem;
-  }
-
-  .padrinazgo .btn {
-    width: 100%;
-    display: inline-block;
+  .donation-methods {
+    grid-template-columns: 1fr;
   }
 }

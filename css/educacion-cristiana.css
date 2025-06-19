@@ -8,26 +8,43 @@
   margin: 0 auto;
   padding: 2rem;
   color: #333;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
 /* Hero Section */
 .hero-section {
   background: linear-gradient(to right, #e3f2fd, #e8f5e9);
   padding: 4rem 2rem;
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  color: #0e3a5d;
+  margin-bottom: 1rem;
 }
 
 .hero-section .lead {
   font-size: 1.2rem;
   max-width: 700px;
-  margin: 1rem auto;
+  margin: 0 auto;
   color: #1a1a1a;
 }
 
 /* Principios Fundamentales */
 .principios-section {
   margin-top: 3rem;
+  padding: 2rem;
+  background-color: #f8fcff;
+  border-left: 4px solid #1976d2;
+  border-radius: 8px;
+}
+
+.principios-section h2 {
+  color: #0e3a5d;
+  margin-bottom: 1rem;
 }
 
 .values-list {
@@ -37,37 +54,100 @@
 }
 
 .values-list li {
-  background-color: #f9fbfc;
-  padding: 1rem;
+  background-color: #ffffff;
+  padding: 1.25rem 1rem;
   margin-bottom: 1rem;
   border-left: 5px solid #0e3a5d;
   border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.values-list li:hover {
+  background-color: #f0f4f8;
 }
 
 /* Metodología */
 .metodologia-section {
   margin-top: 3rem;
-  padding: 1.5rem;
+  padding: 2rem;
   background-color: #f3f9f6;
   border-left: 4px solid #388e3c;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 .metodologia-section h2 {
   color: #2e7d32;
+  margin-bottom: 1rem;
+}
+
+.metodologia-section img {
+  margin-top: 1.5rem;
+  max-width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
 }
 
 /* Impacto Espiritual */
 .impacto-section {
   margin-top: 3rem;
-  padding: 1.5rem;
-  background-color: #fdf3e7;
+  padding: 2rem;
+  background-color: #fff8f0;
   border-left: 4px solid #ef6c00;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 .impacto-section h2 {
   color: #d84315;
+  margin-bottom: 1rem;
+}
+
+.impact-stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.impact-stats article {
+  background-color: #fff;
+  padding: 1.25rem;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.07);
+  text-align: center;
+  flex: 1 1 180px;
+  transition: transform 0.3s ease;
+}
+
+.impact-stats article:hover {
+  transform: translateY(-5px);
+}
+
+.impact-stats strong {
+  font-size: 1.8rem;
+  color: #ef6c00;
+}
+
+/* Frase inspiradora */
+.frase-inspiradora {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #e0f2f1;
+  text-align: center;
+  font-style: italic;
+  border-left: 5px solid #00796b;
+  border-radius: 8px;
+}
+
+.frase-inspiradora blockquote {
+  font-size: 1.2rem;
+  color: #004d40;
+}
+
+/* Animación fadeIn */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive */
@@ -76,12 +156,19 @@
     padding: 3rem 1rem;
   }
 
-  .values-list li {
-    font-size: 0.95rem;
-  }
-
+  .values-list li,
   .metodologia-section,
   .impacto-section {
-    padding: 1rem;
+    padding: 1.25rem;
+  }
+
+  .impact-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .impact-stats article {
+    width: 100%;
+    max-width: 300px;
   }
 }

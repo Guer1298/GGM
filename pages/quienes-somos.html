@@ -19,65 +19,90 @@
   <!-- Estilos -->
   <link rel="stylesheet" href="../css/quienes-somos.css" />
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Animaciones -->
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Header (cargado dinámicamente) -->
+  <!-- Header dinámico -->
   <div id="header" role="banner" aria-label="Encabezado principal"></div>
 
   <main class="container quienes-somos" role="main">
+
     <!-- Sección Hero -->
-    <section class="hero-section" aria-labelledby="titulo-quienes">
+    <section class="hero-section fade-in" aria-labelledby="titulo-quienes"
+      style="background: linear-gradient(rgba(14,58,93,0.6), rgba(14,58,93,0.6)), url('../assets/img/quienes-somos-bg.jpg') center/cover no-repeat; color: white; text-align: center; padding: 5rem 2rem; border-radius: 8px;">
       <h1 id="titulo-quienes">¿Quiénes Somos?</h1>
-      <p class="lead">
-        Somos una comunidad educativa con propósito eterno. La Fundación Educativa Gabriel García Márquez forma integralmente a niños y jóvenes desde una cosmovisión cristiana, combinando excelencia académica con principios espirituales y compromiso social.
-      </p>
+      <p class="lead">Una comunidad educativa con propósito eterno. Formación integral desde una cosmovisión cristiana, con excelencia, fe y servicio.</p>
+      <blockquote style="font-style: italic; margin-top: 1rem;">“Educar con valores no es una opción, es el camino.”</blockquote>
     </section>
 
-    <!-- Sección Historia -->
+    <!-- Historia -->
     <section class="history-section fade-in" aria-labelledby="titulo-historia">
       <h2 id="titulo-historia">Nuestra Historia</h2>
-      <p>
-        Fundada en respuesta a una necesidad profunda de educación con valores, nuestra historia está marcada por el amor al prójimo, el servicio comunitario y la transformación de vidas a través del conocimiento y la fe.
-      </p>
-      <p>
-        Desde nuestros inicios, hemos impactado a cientos de familias promoviendo una educación centrada en el ser humano, la verdad y el propósito de vida.
-      </p>
+      <p>Fundada en respuesta a una necesidad profunda de educación con valores, nuestra historia está marcada por el amor al prójimo, el servicio comunitario y la transformación de vidas a través del conocimiento y la fe.</p>
+      <p>Desde nuestros inicios, hemos impactado a cientos de familias promoviendo una educación centrada en el ser humano, la verdad y el propósito de vida.</p>
     </section>
 
-    <!-- Sección Misión y Visión -->
-    <section class="mission-vision grid-2" aria-labelledby="titulo-mv">
+    <!-- Misión y Visión -->
+    <section class="mission-vision grid-2 fade-in" aria-labelledby="titulo-mv">
       <h2 id="titulo-mv" class="sr-only">Misión y Visión</h2>
       <article>
-        <h3>Misión</h3>
-        <p>
-          Formar ciudadanos íntegros mediante una educación cristiana que fortalezca el espíritu, desarrolle el pensamiento crítico y promueva el servicio a la sociedad.
-        </p>
+        <h3><i class="fas fa-dove"></i> Misión</h3>
+        <p>Formar ciudadanos íntegros mediante una educación cristiana que fortalezca el espíritu, desarrolle el pensamiento crítico y promueva el servicio a la sociedad.</p>
       </article>
       <article>
-        <h3>Visión</h3>
-        <p>
-          Ser una institución referente en educación con valores en Colombia, reconocida por su compromiso con la verdad, la excelencia y el amor al prójimo.
-        </p>
+        <h3><i class="fas fa-lightbulb"></i> Visión</h3>
+        <p>Ser una institución referente en educación con valores en Colombia, reconocida por su compromiso con la verdad, la excelencia y el amor al prójimo.</p>
       </article>
     </section>
 
-    <!-- Sección de Valores -->
-    <section class="values-section" aria-labelledby="titulo-valores">
+    <!-- Valores Institucionales -->
+    <section class="values-section fade-in" aria-labelledby="titulo-valores">
       <h2 id="titulo-valores">Valores Institucionales</h2>
       <ul class="values-list">
-        <li><strong>Fe:</strong> Guía nuestro actuar y decisiones educativas.</li>
-        <li><strong>Servicio:</strong> Ponemos nuestras habilidades al servicio de los demás.</li>
-        <li><strong>Integridad:</strong> Actuamos con transparencia y coherencia en todas nuestras acciones.</li>
-        <li><strong>Compasión:</strong> Educamos con amor, respeto y empatía por cada ser humano.</li>
+        <li><i class="fas fa-cross"></i> <strong>Fe:</strong> Guía nuestro actuar y decisiones educativas.</li>
+        <li><i class="fas fa-hand-holding-heart"></i> <strong>Servicio:</strong> Ponemos nuestras habilidades al servicio de los demás.</li>
+        <li><i class="fas fa-shield-alt"></i> <strong>Integridad:</strong> Actuamos con transparencia y coherencia en todas nuestras acciones.</li>
+        <li><i class="fas fa-heart"></i> <strong>Compasión:</strong> Educamos con amor, respeto y empatía por cada ser humano.</li>
       </ul>
     </section>
+
+    <!-- Testimonios o Frase de Comunidad -->
+    <section class="frase-inspiradora fade-in" style="text-align: center; margin: 4rem auto;">
+      <blockquote>
+        “La educación transforma destinos cuando nace desde el amor, la fe y la verdad.”
+        <cite><br>— Comunidad GGM</cite>
+      </blockquote>
+    </section>
+
+    <!-- CTA o contacto -->
+    <section class="llamado-accion fade-in" style="text-align: center;">
+      <h2>¿Quieres conocer más?</h2>
+      <p>Visítanos o escríbenos. Estás invitado a formar parte de esta misión educativa con propósito eterno.</p>
+      <a href="../pages/contacto.html" class="btn">Contáctanos</a>
+    </section>
+
   </main>
 
-  <!-- Footer (cargado dinámicamente) -->
+  <!-- Footer dinámico -->
   <div id="footer" role="contentinfo" aria-label="Pie de página"></div>
 
-  <!-- Scripts -->
+  <!-- Script -->
   <script src="../js/main.js" defer></script>
 </body>
 </html>

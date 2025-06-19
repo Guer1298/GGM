@@ -11,65 +11,83 @@
   <meta name="author" content="Fundación Educativa Gabriel García Márquez">
   <meta name="robots" content="index, follow" />
 
-  <!-- Estilos -->
+  <!-- Recursos -->
   <link rel="stylesheet" href="../css/style.css"/>
   <link rel="stylesheet" href="../css/donaciones.css"/>
   <link rel="icon" href="../assets/img/favicon.png" type="image/png" />
 </head>
 <body>
 
-  <!-- Header dinámico -->
+  <!-- Encabezado -->
   <div id="header" role="banner" aria-label="Encabezado del sitio"></div>
 
   <main class="container donaciones" role="main">
+    
     <!-- Hero -->
-    <section class="hero-section" aria-labelledby="titulo-donaciones">
+    <section class="hero-section fade-in" aria-labelledby="titulo-donaciones">
+      <img src="../assets/img/donaciones-banner.jpg" alt="Manos unidas apoyando educación" class="hero-image" loading="lazy">
       <h1 id="titulo-donaciones">Donaciones y Alianzas</h1>
       <p class="lead">
-        Tu aporte es una semilla que transforma vidas. Cada donación permite que más niños accedan a una educación con propósito eterno, basada en valores y fe. Súmate como padrino, aliado o donante y sé parte de esta misión.
+        Tu generosidad siembra futuro. Cada aporte impulsa el sueño de un niño que quiere aprender, crecer y transformar su comunidad. Juntos, podemos encender más vidas con fe, educación y esperanza.
       </p>
     </section>
 
     <!-- Formas de Donar -->
-    <section class="formas-donar" aria-labelledby="titulo-formas">
+    <section class="formas-donar fade-in" aria-labelledby="titulo-formas">
       <h2 id="titulo-formas">Formas de Donar</h2>
       <ul class="donation-methods">
-        <li><strong>Transferencia Bancaria:</strong><br>
-          Banco: Bancolombia<br>
-          Cuenta Corriente: 123-456-78901<br>
-          Fundación Educativa Gabriel García Márquez<br>
+        <li>
+          <img src="../assets/icons/banco.svg" alt="Transferencia bancaria" class="icon" />
+          <strong>Transferencia Bancaria</strong><br>
+          Banco: <span>Bancolombia</span><br>
+          Cuenta Corriente: <span>123-456-78901</span><br>
+          Titular: <span>Fundación Educativa Gabriel García Márquez</span><br>
           NIT: 817.004.815-8
         </li>
-        <li><strong>Donación Online:</strong><br>
-          Muy pronto habilitaremos pasarelas de pago seguras para donaciones desde cualquier parte del mundo.
+        <li>
+          <img src="../assets/icons/pago-online.svg" alt="Donación online" class="icon" />
+          <strong>Donación Online</strong><br>
+          Pronto podrás donar desde cualquier lugar del mundo con pasarelas de pago seguras.
         </li>
-        <li><strong>Donación en Especie:</strong><br>
-          Aceptamos libros, alimentos no perecederos, útiles escolares y equipos tecnológicos. Escríbenos para coordinar la entrega.
+        <li>
+          <img src="../assets/icons/donacion-especie.svg" alt="Donación en especie" class="icon" />
+          <strong>Donación en Especie</strong><br>
+          Recibimos libros, alimentos, útiles escolares y tecnología. Escríbenos para coordinar tu entrega solidaria.
         </li>
       </ul>
     </section>
 
-    <!-- Padrinazgo -->
-    <section class="padrinazgo" aria-labelledby="titulo-padrinazgo">
+    <!-- Programa de Padrinazgo -->
+    <section class="padrinazgo fade-in" aria-labelledby="titulo-padrinazgo">
       <h2 id="titulo-padrinazgo">Programa de Padrinazgo</h2>
       <p>
-        Con solo $50.000 COP mensuales puedes apadrinar la educación de un estudiante. Recibirás actualizaciones, cartas y resultados del impacto generado.
+        Con una contribución mensual desde <strong>$50.000 COP</strong>, puedes apadrinar la educación de un niño. Recibirás cartas, fotos y reportes de su progreso. Tu compromiso es el inicio de su historia de superación.
       </p>
-      <a href="contacto.html" class="btn" aria-label="Ir al formulario de contacto para ser padrino">Quiero Ser Padrino</a>
+      <a href="./contacto.html" class="btn btn-secondary">Quiero Ser Padrino</a>
     </section>
 
     <!-- Alianzas -->
-    <section class="alianzas" aria-labelledby="titulo-alianzas">
+    <section class="alianzas fade-in" aria-labelledby="titulo-alianzas">
       <h2 id="titulo-alianzas">Alianzas Estratégicas</h2>
       <p>
-        Si representas a una empresa, iglesia u organización que comparte nuestros valores, podemos construir juntos proyectos educativos, sociales y espirituales. Escríbenos y conversemos.
+        Si representas una empresa, organización o comunidad de fe, puedes unirte a nuestra causa con proyectos de alto impacto social y educativo. Construyamos juntos una Colombia con más oportunidades.
       </p>
+      <a href="./contacto.html" class="btn">Escríbenos</a>
     </section>
+
+    <!-- Llamado emocional -->
+    <section class="cta-donaciones fade-in">
+      <h2>Una semilla de fe puede cambiar el destino de una generación</h2>
+      <p>Apoya, comparte, involúcrate. Ser parte del cambio está a solo un clic.</p>
+      <a href="./contacto.html" class="btn btn-primary">Actúa Hoy</a>
+    </section>
+
   </main>
 
-  <!-- Footer dinámico -->
+  <!-- Pie de página -->
   <div id="footer" role="contentinfo" aria-label="Pie de página del sitio"></div>
 
+  <!-- Scripts -->
   <script src="../js/main.js" defer></script>
 </body>
 </html>

@@ -22,16 +22,17 @@
   <div id="header" role="banner" aria-label="Encabezado del sitio"></div>
 
   <main class="container contacto" role="main">
-    <!-- Introducción -->
-    <section class="hero-section" aria-labelledby="titulo-contacto">
+    
+    <!-- Hero -->
+    <section class="hero-section fade-in" aria-labelledby="titulo-contacto">
       <h1 id="titulo-contacto">Contáctanos</h1>
       <p class="lead">
-        Estamos para escucharte. Si deseas más información sobre nuestros programas, donaciones o deseas colaborar con nuestra misión, escríbenos o visítanos.
+        ¿Tienes preguntas, propuestas o quieres sumarte a nuestra misión? Estamos aquí para escucharte. Escríbenos y caminemos juntos hacia un futuro con propósito.
       </p>
     </section>
 
-    <!-- Formulario -->
-    <section class="formulario-contacto" aria-labelledby="titulo-formulario">
+    <!-- Formulario de contacto -->
+    <section class="formulario-contacto fade-in" aria-labelledby="titulo-formulario">
       <h2 id="titulo-formulario">Escríbenos un mensaje</h2>
       <form action="#" method="post" aria-describedby="instruccion-formulario">
         <p id="instruccion-formulario" class="form-info">Todos los campos marcados con * son obligatorios.</p>
@@ -43,31 +44,39 @@
         <input type="email" id="email" name="email" required placeholder="Ej: correo@ejemplo.com" autocomplete="email">
 
         <label for="subject">Asunto *</label>
-        <input type="text" id="subject" name="subject" required placeholder="Ej: Consulta sobre becas">
+        <input type="text" id="subject" name="subject" required placeholder="Ej: Consulta sobre becas o voluntariado">
 
         <label for="message">Mensaje *</label>
-        <textarea id="message" name="message" rows="6" required placeholder="Escribe tu mensaje aquí..."></textarea>
+        <textarea id="message" name="message" rows="6" required placeholder="Cuéntanos cómo podemos ayudarte o cómo te gustaría colaborar."></textarea>
 
-        <button type="submit" class="btn" aria-label="Enviar mensaje de contacto">Enviar mensaje</button>
+        <button type="submit" class="btn" aria-label="Enviar mensaje de contacto">📨 Enviar mensaje</button>
       </form>
     </section>
 
-    <!-- Datos de contacto -->
-    <section class="informacion-contacto" aria-labelledby="titulo-info">
-      <h2 id="titulo-info">Información de contacto</h2>
+    <!-- Información de contacto -->
+    <section class="informacion-contacto fade-in" aria-labelledby="titulo-info">
+      <h2 id="titulo-info">¿Prefieres escribirnos directamente?</h2>
+      <p>También puedes comunicarte con nosotros por los siguientes medios:</p>
       <ul>
-        <li><strong>Correo:</strong> contacto@fundacionggm.org</li>
-        <li><strong>Teléfono:</strong> +57 310 000 0000</li>
-        <li><strong>Dirección:</strong> Calle 123 #45-67, Popayán, Colombia</li>
-        <li><strong>Horario:</strong> Lunes a viernes, 8:00 a.m. – 4:00 p.m.</li>
+        <li><strong>📧 Correo:</strong> <a href="mailto:contacto@fundacionggm.org">contacto@fundacionggm.org</a></li>
+        <li><strong>📞 Teléfono:</strong> <a href="tel:+573100000000">+57 310 000 0000</a></li>
+        <li><strong>📍 Dirección:</strong> Calle 123 #45-67, Popayán, Colombia</li>
+        <li><strong>⏰ Horario:</strong> Lunes a viernes, 8:00 a.m. – 4:00 p.m.</li>
       </ul>
+    </section>
+
+    <!-- CTA emocional -->
+    <section class="cta-contacto fade-in">
+      <h2>¿Te imaginas transformar una vida hoy?</h2>
+      <p>Cada mensaje puede iniciar una historia de cambio. Escríbenos, colaboremos, construyamos.</p>
+      <a href="./donaciones.html" class="btn">Apoya Nuestra Misión</a>
     </section>
   </main>
 
   <!-- Footer dinámico -->
   <div id="footer" role="contentinfo" aria-label="Pie de página del sitio"></div>
 
-  <!-- Scripts -->
+  <!-- JS -->
   <script src="../js/main.js" defer></script>
 </body>
 </html>

@@ -8,14 +8,17 @@
   margin: 0 auto;
   padding: 2rem;
   color: #333;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 /* Hero / Introducción */
 .hero-section {
   background: linear-gradient(to right, #e0f2f1, #f1f8e9);
   padding: 3.5rem 2rem;
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .hero-section .lead {
@@ -23,6 +26,7 @@
   max-width: 720px;
   margin: 1rem auto;
   color: #1a1a1a;
+  line-height: 1.7;
 }
 
 /* Documentos Públicos */
@@ -32,6 +36,8 @@
 
 .documentos-section h2 {
   margin-bottom: 1rem;
+  color: #0e3a5d;
+  font-size: 1.6rem;
 }
 
 .document-list {
@@ -40,18 +46,34 @@
 }
 
 .document-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   background-color: #fdfdfd;
   border-left: 4px solid #0e3a5d;
   padding: 1rem;
   margin-bottom: 1rem;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s;
+  cursor: pointer;
+}
+
+.document-list li:hover {
+  background-color: #eef7ff;
+  transform: translateY(-2px);
+}
+
+.document-list li::before {
+  content: '📄';
+  font-size: 1.4rem;
+  color: #0e3a5d;
 }
 
 .document-list a {
   color: #0e3a5d;
   font-weight: 500;
   text-decoration: none;
+  transition: color 0.2s;
 }
 
 .document-list a:hover {
@@ -66,6 +88,13 @@
   background-color: #f1f8ff;
   border-left: 4px solid #1e88e5;
   border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(30, 136, 229, 0.1);
+}
+
+.legal-section h2 {
+  color: #1e88e5;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
 }
 
 .legal-list {
@@ -76,15 +105,67 @@
 .legal-list li {
   margin-bottom: 0.8rem;
   line-height: 1.6;
+  padding-left: 1.2rem;
+  position: relative;
 }
 
-/* Alianzas */
+.legal-list li::before {
+  content: '✅';
+  position: absolute;
+  left: 0;
+  color: #1e88e5;
+}
+
+/* Alianzas Estratégicas */
 .alianzas-section {
   margin-top: 3rem;
   padding: 2rem;
   background-color: #fef9e7;
   border-left: 4px solid #fbc02d;
   border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(251, 192, 45, 0.1);
+}
+
+.alianzas-section h2 {
+  color: #f9a825;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.alianzas-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.alianzas-logos img {
+  max-width: 160px;
+  height: auto;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+}
+
+.alianzas-logos img:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive */
@@ -95,6 +176,12 @@
 
   .document-list li {
     font-size: 0.95rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .alianzas-logos img {
+    max-width: 120px;
   }
 
   .legal-section,
