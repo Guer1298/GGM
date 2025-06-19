@@ -64,17 +64,52 @@ img {
 /* ==============================
    Cabecera y Pie de Página
 ============================== */
+/* ====================================
+   ENCABEZADO Y PIE DE PÁGINA GENERAL
+==================================== */
+
 header,
 footer {
   background-color: var(--color-principal);
-  color: white;
-  padding: var(--espaciado);
+  color: #fff;
+  padding: 2rem var(--espaciado);
   text-align: center;
+  font-family: 'Inter', sans-serif;
 }
 
+/* Mejora visual y legibilidad del pie de página */
 footer {
   font-size: 0.9rem;
+  line-height: 1.6;
+  border-top: 4px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
+
+/* Mejora accesibilidad para lectores de pantalla */
+footer a {
+  color: #fff;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+footer a:hover,
+footer a:focus {
+  color: var(--color-acento);
+  outline: none;
+}
+
+/* Responsive: espacio más cómodo en móviles */
+@media (max-width: 768px) {
+  header,
+  footer {
+    padding: 1.5rem 1rem;
+  }
+
+  footer {
+    font-size: 0.85rem;
+  }
+}
+
 
 /* ==============================
    Navegación
@@ -82,6 +117,10 @@ footer {
 /* ==============================
    Navbar - Estilo Profesional
 ============================== */
+
+/* ====================================
+   NAVEGACIÓN PRINCIPAL
+==================================== */
 
 .navbar {
   display: flex;
@@ -92,10 +131,14 @@ footer {
   background-color: var(--color-principal);
   position: relative;
   z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Contenedor interno con control completo */
 .navbar-container {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -106,14 +149,21 @@ footer {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: white;
+  color: #fff;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+  transition: opacity 0.3s ease;
 }
 
 .logo img {
   height: 48px;
+  width: auto;
+}
+
+.logo:hover {
+  opacity: 0.85;
 }
 
 /* --- Enlaces de navegación --- */
@@ -126,118 +176,408 @@ footer {
 }
 
 .nav-links a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+  font-size: 1rem;
+  padding: 0.5rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 4px;
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
   color: var(--color-acento, #ffd54f);
+  background-color: rgba(255, 255, 255, 0.1);
+  outline: none;
 }
 
-/* --- Botón hamburguesa --- */
+/* --- Botón hamburguesa (responsive) --- */
 .nav-toggle {
-  display: none;
+  display: none; /* Se muestra en mobile */
   font-size: 2rem;
-  background: none;
+  background: transparent;
   border: none;
-  color: white;
+  color: #fff;
   cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* ==============================
-   Responsive - Mobile Navigation
-============================== */
+/* Feedback visual al pasar o enfocar */
+.nav-toggle:hover,
+.nav-toggle:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  outline: none;
+  transform: scale(1.05);
+}
+
+/* Accesibilidad adicional */
+.nav-toggle:focus-visible {
+  box-shadow: 0 0 0 2px #ffd54f;
+}
+/* Responsive para pantallas pequeñas */
+/* ======================================
+   Navegación Responsive — Mobile First
+====================================== */
+
 @media (max-width: 768px) {
+  /* Botón hamburguesa visible en móvil */
   .nav-toggle {
     display: block;
     position: absolute;
     top: 1rem;
     right: 1rem;
     z-index: 1001;
+    padding: 0.5rem;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
   }
 
+  .nav-toggle:hover,
+  .nav-toggle:focus {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+  }
+
+  /* Menú oculto por defecto */
   .nav-links {
+    display: none;
     flex-direction: column;
-    background-color: white;
+    width: 100%;
     position: absolute;
     top: 64px;
     right: 0;
-    width: 100%;
-    display: none;
-    padding: 1rem;
-    box-shadow: var(--sombra, 0 4px 6px rgba(0, 0, 0, 0.1));
+    background-color: white;
+    box-shadow: var(--sombra, 0 4px 8px rgba(0, 0, 0, 0.15));
     border-radius: 0 0 var(--radio-borde) var(--radio-borde);
-    transition: max-height 0.3s ease-in-out;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    z-index: 1000;
   }
 
-  .nav-links a {
-    color: var(--color-principal);
-    padding: 0.5rem 0;
-  }
-
+  /* Estilo cuando se activa el menú */
   .nav-links.nav-open {
     display: flex;
   }
+
+  /* Estilos individuales de enlaces */
+  .nav-links a {
+    color: var(--color-principal);
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus {
+    background-color: var(--color-acento, #fce4ec);
+    color: #0e3a5d;
+    border-radius: 4px;
+  }
 }
+
 
 
 
 /* ==============================
    Hero Section
 ============================== */
+/* ============================
+   Sección Hero - Profesional
+============================ */
+
 .hero {
-  background: linear-gradient(to right, var(--color-secundario), var(--color-terciario));
-  padding: 4rem 2rem;
+  position: relative;
+  background: url('./assets/img/colegio.png') center/cover no-repeat;
+  color: white;
   text-align: center;
-  border-radius: var(--radio-borde);
+  padding: 6rem 2rem;
+  border-radius: var(--radio-borde, 12px);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 58, 93, 0.6); /* Capa de oscurecimiento */
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 .hero .lead {
   font-size: 1.25rem;
   margin: 1rem auto;
-  max-width: 600px;
+  max-width: 640px;
+  color: #f0f0f0;
 }
 
+.hero .btn {
+  margin-top: 2rem;
+  padding: 0.8rem 1.6rem;
+  background-color: var(--color-acento, #ffd54f);
+  color: #0e3a5d;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #fbc02d;
+}
+
+
+
+/* =============================
+   Botón Primario - Profesional
+============================= */
 .btn {
   display: inline-block;
   margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1.75rem;
   background-color: var(--color-principal);
-  color: white;
+  color: #fff;
   text-decoration: none;
   border-radius: var(--radio-borde);
-  font-weight: bold;
-  transition: var(--animacion-suave);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
   background-color: #164d79;
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  outline: none;
 }
+
+/* Para accesibilidad con teclado */
+.btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+/* ==========================================
+   VALORES / PILARES FUNDACIONALES
+========================================== */
+.valores-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f9fdfb 0%, #eef6f8 100%);
+  border-radius: 12px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.valores-section h2 {
+  font-size: 2.4rem;
+  color: var(--color-principal, #0e3a5d);
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+}
+
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+/* Caja de cada valor */
+.valores-grid article {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.valores-grid article:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Imagen como elemento visual */
+.icono-valor {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tipografía y contenido */
+.valores-grid strong {
+  font-size: 1.4rem;
+  color: var(--color-principal, #0e3a5d);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.valores-grid p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 90%;
+}
+
+
+
+
 
 /* ==============================
    Highlights
 ============================== */
+/* ================================
+   Sección de Destacados - Profesional
+================================ */
+
 .highlights {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
   margin: 3rem auto;
   padding: 0 var(--espaciado);
-  flex-wrap: wrap;
-  justify-content: center;
+  max-width: 1200px;
 }
 
+/* Caja individual de destacado */
 .highlight-box {
-  background: #f8fafd;
+  background: linear-gradient(135deg, #f8fafd 0%, #ffffff 100%);
   padding: 2rem;
-  border-left: 4px solid var(--color-principal);
+  border-left: 5px solid var(--color-principal);
   border-radius: var(--radio-borde);
-  box-shadow: var(--sombra);
+  box-shadow: var(--sombra, 0 4px 10px rgba(0, 0, 0, 0.05));
   flex: 1 1 300px;
-  max-width: 400px;
+  max-width: 380px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
+
+/* Interactividad */
+.highlight-box:hover,
+.highlight-box:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenido interno opcional */
+.highlight-box h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: var(--color-principal);
+}
+
+.highlight-box p {
+  font-size: 1rem;
+  color: #444;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   Sección de Llamado a la Acción (CTA)
+========================================== */
+.llamado-accion {
+  background-color: #e0f2f1;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: var(--sombra, 0 4px 10px rgba(0, 0, 0, 0.05));
+  margin: 4rem auto;
+  max-width: 1000px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.llamado-accion:hover {
+  transform: translateY(-5px);
+}
+
+/* Imagen */
+.llamado-accion img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: var(--radio-borde, 6px);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título y texto */
+.llamado-accion h2 {
+  font-size: 2rem;
+  color: var(--color-principal, #00695c);
+  margin-bottom: 0.5rem;
+}
+
+.llamado-accion p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Botón CTA */
+.llamado-accion .btn {
+  background-color: var(--color-acento, #00796b);
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radio-borde, 6px);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.llamado-accion .btn:hover,
+.llamado-accion .btn:focus {
+  background-color: #004d40;
+}
+
+
 
 /* ==============================
    Footer profesional

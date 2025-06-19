@@ -68,24 +68,97 @@
 
 /* Metodología */
 .metodologia-section {
-  margin-top: 3rem;
-  padding: 2rem;
-  background-color: #f3f9f6;
-  border-left: 4px solid #388e3c;
-  border-radius: 8px;
+  position: relative;
+  margin-top: 5rem;
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, #f1f8e9 0%, #e8f5e9 100%);
+  border-left: 6px solid #2e7d32;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metodologia-section:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 .metodologia-section h2 {
-  color: #2e7d32;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: #1b5e20;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
 }
 
-.metodologia-section img {
-  margin-top: 1.5rem;
-  max-width: 100%;
-  border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+.metodologia-section p {
+  font-size: 1.15rem;
+  color: #444;
+  max-width: 780px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.8;
+  position: relative;
+  z-index: 2;
 }
+
+.metodologia-section .img-fluid {
+  max-width: 92%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.metodologia-section .img-fluid:hover {
+  transform: scale(1.03);
+}
+
+/* Ornamento visual sutil de fondo */
+.metodologia-section::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 220px;
+  height: 220px;
+  background: rgba(46, 125, 50, 0.05);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.metodologia-section::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  right: -60px;
+  width: 160px;
+  height: 160px;
+  background: rgba(76, 175, 80, 0.08);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .metodologia-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .metodologia-section h2 {
+    font-size: 2rem;
+  }
+
+  .metodologia-section p {
+    font-size: 1.05rem;
+  }
+}
+
+
 
 /* Impacto Espiritual */
 .impacto-section {
