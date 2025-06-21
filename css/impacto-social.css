@@ -49,113 +49,210 @@
    PROGRAMAS
 ------------------------ */
 .programas-section {
-  margin-top: 3.5rem;
+  margin-top: 4rem;
+  padding: 2rem 1rem;
+  background-color: #f1f8f4;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
 }
 
 .programas-section h2 {
   color: #2e7d32;
-  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
 }
 
+/* Lista de programas */
 .program-list {
   list-style: none;
   padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
+/* Ítem de programa */
 .program-list li {
   display: flex;
   align-items: flex-start;
-  background: #f9f9f9;
-  padding: 1rem 1.2rem;
-  margin-bottom: 1rem;
-  border-left: 6px solid #2e7d32;
-  border-radius: 6px;
   gap: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  background: #ffffff;
+  padding: 1.25rem 1.5rem;
+  border-left: 5px solid #2e7d32;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.program-list li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Icono visual (vector) */
 .program-list .icon {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.08));
+}
+
+/* Texto dentro del ítem */
+.program-list strong {
+  display: block;
+  font-size: 1.2rem;
+  color: #1b5e20;
+  margin-bottom: 0.3rem;
+}
+
+.program-list p {
+  margin: 0;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
 }
 
 /* -----------------------
    TESTIMONIOS
 ------------------------ */
 .testimonios-section {
-  margin-top: 3.5rem;
+  margin-top: 4rem;
+  padding: 3rem 2rem;
   background-color: #f1f8ff;
-  padding: 2rem;
   border-left: 5px solid #1976d2;
-  border-radius: 8px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(25, 118, 210, 0.05);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .testimonios-section h2 {
   color: #1976d2;
-  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
 }
 
+/* Bloques de testimonio */
 .testimonios-section blockquote {
-  background: #fff;
-  padding: 1rem 1.5rem;
-  border-left: 5px solid #64b5f6;
+  background: #ffffff;
+  padding: 1.5rem 2rem;
+  border-left: 6px solid #64b5f6;
   font-style: italic;
-  margin: 1rem 0;
-  border-radius: 5px;
+  margin: 1.5rem auto;
+  border-radius: 8px;
   position: relative;
+  max-width: 900px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.testimonios-section blockquote::before {
+  content: "“";
+  font-size: 3rem;
+  color: #64b5f6;
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  line-height: 1;
+  font-family: Georgia, serif;
+}
+
+.testimonios-section blockquote:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Autor del testimonio */
 .testimonios-section cite {
   display: block;
-  margin-top: 0.8rem;
-  font-weight: bold;
+  margin-top: 1rem;
+  font-weight: 600;
   color: #0d47a1;
   font-style: normal;
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
 }
 
 /* -----------------------
    MÉTRICAS
 ------------------------ */
 .metricas-section {
-  margin-top: 3.5rem;
-  padding: 2rem;
+  margin-top: 4rem;
+  padding: 3rem 2rem;
   background-color: #e8f5e9;
   border-left: 6px solid #43a047;
-  border-radius: 8px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  text-align: center;
 }
 
 .metricas-section h2 {
   color: #2e7d32;
-  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
 }
 
+/* Grid de métricas responsivo */
 .impact-metrics {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
   padding: 0;
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
+/* Tarjeta individual de métrica */
 .impact-metrics li {
-  text-align: center;
   background: #ffffff;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   border: 2px solid #c8e6c9;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  transition: transform 0.2s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .impact-metrics li:hover {
-  transform: scale(1.03);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
 }
 
+/* Íconos de impacto */
 .impact-metrics img {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 0.6rem;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  filter: grayscale(40%);
+  transition: filter 0.3s ease;
+}
+
+.impact-metrics li:hover img {
+  filter: none;
+}
+
+/* Valores y descripciones */
+.impact-metrics strong {
+  font-size: 1.8rem;
+  color: #2e7d32;
+  font-weight: 800;
+}
+
+.impact-metrics li span {
+  font-size: 1rem;
+  color: #444;
+  margin-top: 0.5rem;
+  line-height: 1.4;
 }
 
 /* -----------------------
@@ -201,19 +298,73 @@
 ------------------------ */
 @media (max-width: 768px) {
   .hero-section {
-    padding: 2.5rem 1rem;
+    padding: 2.5rem 1.5rem;
   }
 
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section .lead {
+    font-size: 1.1rem;
+  }
+
+  .hero-section .hero-image {
+    max-height: 300px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
   .program-list li {
     flex-direction: column;
     align-items: flex-start;
+    text-align: left;
   }
 
-  .impact-metrics {
-    grid-template-columns: 1fr;
+  .program-list .icon {
+    width: 36px;
+    height: 36px;
   }
 
-  .cta-donar h2 {
-    font-size: 1.6rem;
+  .program-list strong {
+    font-size: 1.1rem;
+  }
+
+  .programas-section h2 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonios-section {
+    padding: 2rem 1rem;
+  }
+
+  .testimonios-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .testimonios-section blockquote {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .testimonios-section cite {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .impact-metrics li {
+    padding: 1.5rem;
+  }
+
+  .impact-metrics strong {
+    font-size: 1.5rem;
+  }
+
+  .impact-metrics img {
+    width: 40px;
+    height: 40px;
   }
 }

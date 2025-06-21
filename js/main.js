@@ -1,18 +1,23 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const isInSubfolder = window.location.pathname.includes("/pages/");
-  const componentBasePath = isInSubfolder ? "../components/" : "components/";
+  const basePath = isInSubfolder ? "../" : "./";
+  const componentPath = basePath + "components/";
 
-  // Carga dinámica de un componente
-  const loadComponent = async (selector, fileName) => {
+  // Función para cargar componentes HTML reutilizables
+  const loadComponent = async (selector, fileName, replaceBase = false) => {
     const container = document.querySelector(selector);
-    const path = `${componentBasePath}${fileName}`;
-
     if (!container) return;
 
     try {
-      const response = await fetch(path);
-      if (!response.ok) throw new Error(`No se pudo cargar ${path}`);
-      container.innerHTML = await response.text();
+      const res = await fetch(componentPath + fileName);
+      if (!res.ok) throw new Error(`No se pudo cargar ${fileName}`);
+      let html = await res.text();
+
+      if (replaceBase) {
+        html = html.replaceAll("[[BASE]]", basePath);
+      }
+
+      container.innerHTML = html;
     } catch (err) {
       console.error(`Error al cargar ${fileName}:`, err);
     }
@@ -20,14 +25,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Cargar header y footer
   await Promise.all([
-    loadComponent("#header", "header.html"),
+    loadComponent("#header", "header.html", true),
     loadComponent("#footer", "footer.html")
   ]);
 
-  // Inicializar menú responsive después de cargar el header
+  // Inicializar navegación después de cargar el header
   initNavMenu();
 });
 
+/**
+ * Activa el menú hamburguesa con accesibilidad y cierre automático.
+ */
 function initNavMenu() {
   const toggleBtn = document.querySelector(".nav-toggle");
   const navMenu = document.getElementById("nav-menu");
@@ -35,12 +43,11 @@ function initNavMenu() {
   if (!toggleBtn || !navMenu) return;
 
   toggleBtn.addEventListener("click", () => {
-    const isExpanded = toggleBtn.getAttribute("aria-expanded") === "true";
-    toggleBtn.setAttribute("aria-expanded", String(!isExpanded));
+    const expanded = toggleBtn.getAttribute("aria-expanded") === "true";
+    toggleBtn.setAttribute("aria-expanded", String(!expanded));
     navMenu.classList.toggle("nav-open");
   });
 
-  // Cierra el menú en móviles al hacer clic en un enlace
   navMenu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("nav-open");
@@ -48,74 +55,3 @@ function initNavMenu() {
     });
   });
 }
-
-document.addEventListener("DOMContentLoaded", async () => {
-  const isInPages = window.location.pathname.includes("/pages/");
-  const basePath = isInPages ? "../" : "./";
-
-  try {
-    // Cargar header
-    const headerRes = await fetch(basePath + "components/header.html");
-    let headerHtml = await headerRes.text();
-    headerHtml = headerHtml.replaceAll("[[BASE]]", basePath);
-    document.getElementById("header").innerHTML = headerHtml;
-
-    // Cargar footer
-    const footerRes = await fetch(basePath + "components/footer.html");
-    document.getElementById("footer").innerHTML = await footerRes.text();
-
-    // Activar menú responsive
-    initNavMenu();
-
-  } catch (error) {
-    console.error("Error al cargar componentes:", error);
-  }
-});
-
-function initNavMenu() {
-  const toggleBtn = document.querySelector(".nav-toggle");
-  const navMenu = document.getElementById("nav-menu");
-
-  if (toggleBtn && navMenu) {
-    toggleBtn.addEventListener("click", () => {
-      const isExpanded = toggleBtn.getAttribute("aria-expanded") === "true";
-      toggleBtn.setAttribute("aria-expanded", String(!isExpanded));
-      navMenu.classList.toggle("nav-open");
-    });
-
-    navMenu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("nav-open");
-        toggleBtn.setAttribute("aria-expanded", "false");
-      });
-    });
-  }
-}
-
-function initNavMenu() {
-  const toggleBtn = document.querySelector(".nav-toggle");
-  const navMenu = document.getElementById("nav-menu");
-
-  if (toggleBtn && navMenu) {
-    toggleBtn.addEventListener("click", () => {
-      const expanded = toggleBtn.getAttribute("aria-expanded") === "true";
-      toggleBtn.setAttribute("aria-expanded", String(!expanded));
-      navMenu.classList.toggle("nav-open");
-    });
-
-    // Opcional: cerrar menú al hacer clic en un enlace
-    navMenu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("nav-open");
-        toggleBtn.setAttribute("aria-expanded", "false");
-      });
-    });
-  }
-}
-
-// Después de cargar el header
-loadComponent('#header', 'components/header.html').then(() => {
-  initNavMenu();
-});
-
-

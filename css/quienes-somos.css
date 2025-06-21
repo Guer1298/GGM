@@ -10,187 +10,477 @@
   font-family: 'Segoe UI', Roboto, Arial, sans-serif;
 }
 
-/* ================================
-   HERO PRINCIPAL
-================================== */
+/* ====================================
+   HERO PRINCIPAL - DISEÑO PROFESIONAL
+==================================== */
 .hero-section {
-  background: linear-gradient(to right, #e0f7fa, #e8f5e9);
+  background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
   padding: 5rem 2rem;
-  border-radius: 12px;
+  border-radius: 16px;
   text-align: center;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
+/* Círculo decorativo animado (valor añadido visual) */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  top: -60px;
+  right: -60px;
+  z-index: 0;
+  animation: floatCircle 8s ease-in-out infinite alternate;
+}
+
+/* Animación del decorativo */
+@keyframes floatCircle {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(30px);
+  }
+}
+
+/* Contenido principal */
 .hero-section h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-principal, #0e3a5d);
   margin-bottom: 1rem;
-  color: #0e3a5d;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-section .lead {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto;
+  font-size: 1.25rem;
   color: #1a1a1a;
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
 }
 
+/* Cita opcional */
 .hero-section blockquote {
+  margin-top: 2rem;
   font-style: italic;
-  margin-top: 1.5rem;
-  color: #444;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  color: #555;
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ================================
    HISTORIA
 ================================== */
 .history-section {
-  margin-top: 3rem;
-  padding: 2rem;
-  background-color: #f9fbfd;
-  border-left: 6px solid #0e3a5d;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #f9fbfd, #eef4f8);
+  border-left: 6px solid var(--color-principal, #0e3a5d);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
+
+/* Detalle decorativo opcional */
+.history-section::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  background: rgba(14, 58, 93, 0.05);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.history-section h2 {
+  font-size: 2rem;
+  color: var(--color-principal, #0e3a5d);
+  margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.history-section p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Interactividad sutil */
+.history-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
 
 /* ================================
    MISIÓN Y VISIÓN EN GRID
 ================================== */
 .grid-2 {
   display: flex;
-  gap: 2rem;
-  margin-top: 2.5rem;
   flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 3rem;
+  justify-content: center;
 }
 
+/* Caja individual */
 .grid-2 article {
-  flex: 1;
-  background-color: #eef6f8;
-  border-left: 4px solid #0e3a5d;
-  border-radius: 6px;
-  padding: 1.5rem;
-  min-width: 280px;
+  flex: 1 1 320px;
+  background: linear-gradient(135deg, #f0faff 0%, #eef6f8 100%);
+  border-left: 5px solid var(--color-principal, #0e3a5d);
+  border-radius: 10px;
+  padding: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.04);
 }
 
+/* Interacción */
 .grid-2 article:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
 }
 
+/* Encabezado */
 .grid-2 h3 {
-  color: #0e3a5d;
-  margin-bottom: 0.5rem;
-  font-size: 1.4rem;
+  color: var(--color-principal, #0e3a5d);
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+/* Texto descriptivo */
+.grid-2 p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Ícono decorativo opcional */
+.grid-2 article::before {
+  content: "★";
+  font-size: 1.5rem;
+  color: var(--color-acento, #ffd54f);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  opacity: 0.2;
 }
 
 /* ================================
    VALORES
 ================================== */
 .values-section {
-  margin-top: 3.5rem;
+  margin-top: 4rem;
+  padding: 2rem 1rem;
+  background: linear-gradient(to right, #f5faff, #eef6f8);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
 .values-section h2 {
-  margin-bottom: 1.2rem;
-  font-size: 1.8rem;
-  color: #0e3a5d;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  color: var(--color-principal, #0e3a5d);
+  text-align: center;
+  font-weight: 700;
 }
 
+/* Lista de valores con layout responsivo */
 .values-list {
   list-style: none;
   padding-left: 0;
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
+/* Item de valor */
 .values-list li {
-  background-color: #fdfdfd;
-  padding: 1rem 1.5rem;
-  border-left: 4px solid #0e3a5d;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  background-color: #ffffff;
+  padding: 1.5rem 1.75rem;
+  border-left: 5px solid var(--color-principal, #0e3a5d);
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 1.25rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Animación al pasar el cursor */
+.values-list li:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Ícono */
 .values-list li i {
-  color: #0e3a5d;
-  font-size: 1.3rem;
+  color: var(--color-acento, #ffd54f);
+  font-size: 1.8rem;
   flex-shrink: 0;
+}
+
+/* Texto del valor */
+.values-list li span {
+  font-size: 1.05rem;
+  color: #333;
+  line-height: 1.5;
 }
 
 /* ================================
    LLAMADO A LA ACCIÓN
 ================================== */
 .llamado-accion {
-  margin: 4rem auto 0;
-  padding: 3rem 2rem;
-  background-color: #e0f7fa;
+  margin: 5rem auto 0;
+  padding: 3.5rem 2rem;
+  background: linear-gradient(135deg, #e0f7fa 0%, #f1f8e9 100%);
   text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 960px;
+  overflow: hidden;
 }
 
+.llamado-accion:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* Título del CTA */
 .llamado-accion h2 {
-  color: #0e3a5d;
+  color: var(--color-principal, #0e3a5d);
+  font-size: 2rem;
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 
+/* Descripción del CTA */
 .llamado-accion p {
-  max-width: 600px;
-  margin: 0 auto 1.5rem;
-  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  font-size: 1.15rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Botón de acción */
+.llamado-accion .btn {
+  display: inline-block;
+  background-color: var(--color-acento, #00796b);
+  color: #fff;
+  padding: 0.85rem 2.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.llamado-accion .btn:hover,
+.llamado-accion .btn:focus {
+  background-color: #004d40;
+  transform: scale(1.03);
 }
 
 /* ================================
    FRASE INSPIRADORA
 ================================== */
 .frase-inspiradora {
-  margin-top: 4rem;
-  padding: 2rem;
-  background-color: #f1f8f6;
-  border-left: 5px solid #0e3a5d;
-  text-align: center;
+  margin: 5rem auto 0;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(90deg, #f1f8f6 0%, #eaf4f3 100%);
+  border-left: 6px solid var(--color-principal, #0e3a5d);
+  border-radius: 10px;
   font-style: italic;
-  border-radius: 8px;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #333;
+  max-width: 960px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  position: relative;
+  text-align: center;
+}
+
+/* Cita decorativa */
+.frase-inspiradora::before {
+  content: "“";
+  font-size: 3rem;
+  color: var(--color-acento, #0e3a5d);
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  opacity: 0.2;
+  font-family: Georgia, serif;
 }
 
 /* ================================
    ACCESIBILIDAD EXTRA
 ================================== */
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 /* ================================
    RESPONSIVE
 ================================== */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+  .hero-section h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-section .lead {
+    font-size: 1.15rem;
+  }
+
+  .hero-section::before {
+    width: 180px;
+    height: 180px;
+    top: -40px;
+    right: -40px;
+  }
+}
+
+@media (max-width: 600px) {
   .hero-section {
-    padding: 3rem 1.5rem;
+    padding: 3.5rem 1.25rem;
   }
 
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section .lead {
+    font-size: 1rem;
+  }
+
+  .hero-section blockquote {
+    font-size: 0.95rem;
+  }
+}
+
+/* ================================
+   Responsive - Mobile Adaptation
+================================ */
+@media (max-width: 768px) {
+  .history-section {
+    padding: 2rem 1.25rem;
+    margin-top: 3rem;
+  }
+
+  .history-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .history-section p {
+    font-size: 1rem;
+  }
+
+  .history-section::before {
+    width: 80px;
+    height: 80px;
+    top: -20px;
+    right: -20px;
+  }
+}
+
+@media (max-width: 768px) {
   .grid-2 {
-    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
   }
 
-  .values-list {
-    grid-template-columns: 1fr;
+  .grid-2 article {
+    padding: 1.5rem;
   }
 
+  .grid-2 h3 {
+    font-size: 1.4rem;
+  }
+
+  .grid-2 p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .values-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .values-list li {
+    padding: 1.25rem;
+  }
+
+  .values-list li i {
+    font-size: 1.5rem;
+  }
+
+  .values-list li span {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive: Pantallas pequeñas */
+@media (max-width: 600px) {
   .llamado-accion {
-    padding: 2rem 1rem;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .llamado-accion h2 {
+    font-size: 1.7rem;
+  }
+
+  .llamado-accion p {
+    font-size: 1rem;
+  }
+
+  .llamado-accion .btn {
+    font-size: 1rem;
+    padding: 0.75rem 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .frase-inspiradora {
+    font-size: 1.1rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .frase-inspiradora::before {
+    font-size: 2.5rem;
+    left: 10px;
   }
 }

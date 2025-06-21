@@ -6,9 +6,36 @@
 .educacion-cristiana {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  color: #333;
+  padding: 3rem 2rem;
+  color: #2e2e2e;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  background-color: #fefefe;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
   animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Mejora visual para títulos */
+.educacion-cristiana h2,
+.educacion-cristiana h3 {
+  color: var(--color-principal, #0e3a5d);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+/* Ajustes para párrafos */
+.educacion-cristiana p {
+  margin-bottom: 1.5rem;
+}
+
+/* Imágenes embebidas */
+.educacion-cristiana img {
+  max-width: 100%;
+  height: auto;
+  margin: 2rem 0;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
 /* Hero Section */
@@ -36,43 +63,75 @@
 /* Principios Fundamentales */
 .principios-section {
   margin-top: 3rem;
-  padding: 2rem;
+  padding: 3rem 2rem;
   background-color: #f8fcff;
-  border-left: 4px solid #1976d2;
-  border-radius: 8px;
+  border-left: 6px solid #1976d2;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: background-color 0.4s ease;
 }
 
 .principios-section h2 {
+  font-size: 2.2rem;
   color: #0e3a5d;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 700;
 }
 
+/* Lista de valores */
 .values-list {
   list-style: none;
   padding-left: 0;
-  margin-top: 1rem;
+  margin: 2rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
+/* Item individual */
 .values-list li {
   background-color: #ffffff;
-  padding: 1.25rem 1rem;
-  margin-bottom: 1rem;
-  border-left: 5px solid #0e3a5d;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  padding: 1.5rem 1.25rem;
+  border-left: 6px solid #0e3a5d;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
 .values-list li:hover {
   background-color: #f0f4f8;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Contenido de cada principio */
+.values-list li::before {
+  content: "✓";
+  color: #1976d2;
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 1rem;
+  top: 1.5rem;
+}
+
+/* Compensar el padding al usar el check */
+.values-list li {
+  padding-left: 2.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
 }
 
 /* Metodología */
 .metodologia-section {
   position: relative;
   margin-top: 5rem;
-  padding: 4rem 2rem;
-  background: linear-gradient(to right, #f1f8e9 0%, #e8f5e9 100%);
-  border-left: 6px solid #2e7d32;
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 100%);
+  border-left: 8px solid #2e7d32;
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   text-align: center;
@@ -82,43 +141,47 @@
 
 .metodologia-section:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
+/* TÍTULO */
 .metodologia-section h2 {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   color: #1b5e20;
   font-weight: 800;
   margin-bottom: 1.5rem;
   position: relative;
   z-index: 2;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.05);
 }
 
+/* TEXTO */
 .metodologia-section p {
-  font-size: 1.15rem;
-  color: #444;
-  max-width: 780px;
+  font-size: 1.2rem;
+  color: #37474f;
+  max-width: 800px;
   margin: 0 auto 2.5rem;
-  line-height: 1.8;
+  line-height: 1.75;
   position: relative;
   z-index: 2;
 }
 
+/* IMAGEN PRINCIPAL */
 .metodologia-section .img-fluid {
-  max-width: 92%;
+  max-width: 95%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
   transition: transform 0.4s ease;
-  z-index: 2;
   position: relative;
+  z-index: 2;
 }
 
 .metodologia-section .img-fluid:hover {
-  transform: scale(1.03);
+  transform: scale(1.035);
 }
 
-/* Ornamento visual sutil de fondo */
+/* ORNAMENTOS DE FONDO CIRCULARES */
 .metodologia-section::before {
   content: "";
   position: absolute;
@@ -143,78 +206,107 @@
   z-index: 1;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .metodologia-section {
-    padding: 3rem 1.5rem;
-  }
 
-  .metodologia-section h2 {
-    font-size: 2rem;
-  }
-
-  .metodologia-section p {
-    font-size: 1.05rem;
-  }
-}
 
 
 
 /* Impacto Espiritual */
 .impacto-section {
-  margin-top: 3rem;
-  padding: 2rem;
-  background-color: #fff8f0;
-  border-left: 4px solid #ef6c00;
-  border-radius: 8px;
+  margin-top: 4rem;
+  padding: 3.5rem 2rem;
+  background: linear-gradient(135deg, #fff8f0 0%, #fff3e0 100%);
+  border-left: 6px solid #ef6c00;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  position: relative;
+  isolation: isolate;
 }
 
 .impacto-section h2 {
+  font-size: 2.4rem;
   color: #d84315;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
 }
 
 .impact-stats {
   display: flex;
-  justify-content: space-around;
-  gap: 1.5rem;
+  justify-content: center;
   flex-wrap: wrap;
-  margin-top: 1.5rem;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
+/* Tarjetas de estadísticas */
 .impact-stats article {
-  background-color: #fff;
-  padding: 1.25rem;
-  border-radius: 6px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.07);
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   text-align: center;
-  flex: 1 1 180px;
-  transition: transform 0.3s ease;
+  flex: 1 1 200px;
+  max-width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 5px solid #ff9800;
 }
 
 .impact-stats article:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
+/* Cifra destacada */
 .impact-stats strong {
-  font-size: 1.8rem;
+  display: block;
+  font-size: 2.2rem;
   color: #ef6c00;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+}
+
+/* Descripción */
+.impact-stats p {
+  font-size: 1rem;
+  color: #444;
+  margin: 0;
+  line-height: 1.5;
 }
 
 /* Frase inspiradora */
 .frase-inspiradora {
-  margin-top: 3rem;
-  padding: 2rem;
-  background-color: #e0f2f1;
+  margin: 4rem auto;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, #e0f2f1 0%, #f1fdfc 100%);
   text-align: center;
   font-style: italic;
-  border-left: 5px solid #00796b;
-  border-radius: 8px;
+  border-left: 6px solid #00796b;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  max-width: 900px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.frase-inspiradora::before {
+  content: "❝";
+  font-size: 5rem;
+  color: rgba(0, 121, 107, 0.1);
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  z-index: 0;
 }
 
 .frase-inspiradora blockquote {
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   color: #004d40;
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 /* Animación fadeIn */
@@ -224,6 +316,12 @@
 }
 
 /* Responsive */
+
+@media (max-width: 768px) {
+  .educacion-cristiana {
+    padding: 2rem 1rem;
+  }
+}
 @media (max-width: 768px) {
   .hero-section {
     padding: 3rem 1rem;
@@ -243,5 +341,95 @@
   .impact-stats article {
     width: 100%;
     max-width: 300px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-section h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-section .lead {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section .lead {
+    font-size: 1.05rem;
+  }
+}
+
+/* Animación fade-in desde abajo */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .principios-section {
+    padding: 2rem 1.2rem;
+  }
+
+  .principios-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .values-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .metodologia-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .metodologia-section h2 {
+    font-size: 2.2rem;
+  }
+
+  .metodologia-section p {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .impacto-section h2 {
+    font-size: 2rem;
+  }
+
+  .impact-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .impact-stats article {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .frase-inspiradora {
+    padding: 2rem 1.5rem;
+  }
+
+  .frase-inspiradora blockquote {
+    font-size: 1.1rem;
   }
 }
