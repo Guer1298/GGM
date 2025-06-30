@@ -1,18 +1,28 @@
 <footer class="site-footer" role="contentinfo">
   <div class="footer-container">
-    
-    <!-- Información institucional -->
+
+    <!-- Información Institucional -->
     <div class="footer-info">
-      <h2 class="footer-logo">Fundación Educativa<br><span>Gabriel García Márquez</span></h2>
-      <p class="footer-mision">Formamos con propósito eterno desde Popayán, Colombia.</p>
+      <h2 class="footer-logo">
+        Fundación Educativa <br>
+        <span>Gabriel García Márquez</span>
+      </h2>
+      <p class="footer-mision">
+        Educamos con excelencia, fe y propósito eterno desde Popayán, Colombia.
+      </p>
       <p class="footer-nit">NIT: 817.004.815-8</p>
+      <p class="footer-contacto">
+        📍 Calle 10 #8-73 - Popayán, Colombia <br>
+        📞 (+57) 313 581 3350
+      </p>
     </div>
 
-    <!-- Enlaces rápidos -->
-    <nav class="footer-links" aria-label="Enlaces rápidos">
+    <!-- Enlaces útiles -->
+    <nav class="footer-links" aria-label="Enlaces útiles">
       <h3>Enlaces útiles</h3>
       <ul>
-        <li><a href="../pages/quienes-somos.html">¿Quiénes Somos?</a></li>
+        <li><a href="../pages/quienes-somos.html">¿Quiénes somos?</a></li>
+        <li><a href="../pages/propuesta-educativa.html">Propuesta Educativa</a></li>
         <li><a href="../pages/transparencia.html">Transparencia</a></li>
         <li><a href="../pages/donaciones.html">Donaciones</a></li>
         <li><a href="../pages/contacto.html">Contáctanos</a></li>
@@ -20,41 +30,45 @@
     </nav>
 
     <!-- Redes sociales -->
-    <!-- Asegúrate de incluir este link en tu <head> -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Y0UReyR3Q5zg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <div class="footer-social">
+      <h3>Conéctate con nosotros</h3>
+      <ul class="social-icons">
+        <li>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/573135813350" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
 
-<div class="footer-social">
-  <h3>Síguenos</h3>
-  <ul class="social-icons">
-    <li>
-      <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook Fundación GGM">
-        <i class="fab fa-facebook-f" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram Fundación GGM">
-        <i class="fab fa-instagram" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube Fundación GGM">
-        <i class="fab fa-youtube" aria-hidden="true"></i>
-      </a>
-    </li>
-  </ul>
-</div>
-
-
-  <!-- Sección legal y año automático -->
-  <div class="footer-bottom">
-    <ul class="legal-links" aria-label="Enlaces legales">
-      <li><a href="#">Política de Privacidad</a></li>
-      <li><a href="#">Tratamiento de Datos</a></li>
-      <li><a href="#">Términos y Condiciones</a></li>
-    </ul>
-    <p>&copy; <span id="year"></span> Fundación Educativa Gabriel García Márquez. Con fe, excelencia y servicio.</p>
   </div>
 
+  <!-- Sección Legal -->
+  <div class="footer-bottom">
+    <ul class="legal-links" aria-label="Enlaces legales">
+      <li><a href="../pages/politica-privacidad.html">Política de Privacidad</a></li>
+      <li><a href="../pages/tratamiento-datos.html">Tratamiento de Datos</a></li>
+      <li><a href="../pages/terminos-condiciones.html">Términos y Condiciones</a></li>
+    </ul>
+    <p>&copy; <span id="year"></span> Fundación Educativa Gabriel García Márquez. Todos los derechos reservados.</p>
+  </div>
+
+  <!-- Script para año automático -->
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>

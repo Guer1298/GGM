@@ -368,7 +368,6 @@ img {
 
 .hero {
   position: relative;
-  background: url('./assets/img/colegio.png') center/cover no-repeat;
   color: #fff;
   text-align: center;
   padding: 7rem 2rem;
@@ -379,13 +378,30 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #0e3a5d;
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
+  background: url('../assets/img/Hero1.png') center/cover no-repeat;
+  filter: brightness(0.6) contrast(1.1) saturate(1.2);
+  transform: scale(1.05);
+  transition: transform 8s ease;
+  z-index: -2;
+}
+
+.hero:hover::before {
+  transform: scale(1.1);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
   background: linear-gradient(to bottom, rgba(14, 58, 93, 0.7), rgba(14, 58, 93, 0.3));
+  backdrop-filter: blur(2px);
   z-index: -1;
 }
 
@@ -394,7 +410,10 @@ img {
   max-width: 960px;
   margin: 0 auto;
   padding: 1rem;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .hero h1 {
@@ -402,7 +421,7 @@ img {
   font-weight: 800;
   margin-bottom: 1rem;
   line-height: 1.2;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .hero .lead {
@@ -410,7 +429,7 @@ img {
   margin: 1rem auto;
   max-width: 700px;
   color: #f0f4f8;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
 }
 
 .hero .btn {
@@ -418,20 +437,20 @@ img {
   padding: 0.9rem 2rem;
   background-color: var(--color-acento, #ffd54f);
   color: #0e3a5d;
-  border-radius: 8px;
+  border-radius: 12px;
   font-weight: bold;
   font-size: 1rem;
   text-decoration: none;
   display: inline-block;
   transition: all 0.3s ease;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .hero .btn:hover,
 .hero .btn:focus {
   background-color: #fbc02d;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
 }
 
 
@@ -713,114 +732,114 @@ article:hover .icono-valor {
    Footer profesional
 ============================== */
 .site-footer {
-  background-color: var(--color-principal, #0e3a5d);
-  color: #fff;
-  padding: 3rem 1.5rem;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  background-color: #0e3a5d;
+  color: #f0f4f8;
+  padding: 4rem 2rem 2rem;
+  border-top: 4px solid #ffd54f;
 }
 
 .footer-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
   gap: 2rem;
+  justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  padding-bottom: 2rem;
 }
 
-.footer-info,
+.footer-info {
+  flex: 1 1 300px;
+}
+
+.footer-logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.footer-logo span {
+  color: #ffd54f;
+}
+
+.footer-mision,
+.footer-nit,
+.footer-contacto {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
 .footer-links,
 .footer-social {
-  flex: 1;
-  min-width: 240px;
+  flex: 1 1 200px;
 }
 
-.footer-info p {
-  margin: 0.5rem 0;
-}
-
-.footer-links h4,
-.footer-social h4 {
+.footer-links h3,
+.footer-social h3 {
+  font-size: 1.2rem;
   margin-bottom: 1rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--color-acento, #ffd54f);
 }
 
 .footer-links ul,
-.legal-links,
 .social-icons {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-links a,
-.legal-links a {
-  color: #ffffff;
+.footer-links li,
+.social-icons li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: #f0f4f8;
   text-decoration: none;
-  display: block;
-  margin-bottom: 0.4rem;
   transition: color 0.3s ease;
 }
 
-.footer-links a:hover,
-.legal-links a:hover {
-  color: var(--color-acento, #ffd54f);
-  text-decoration: underline;
+.footer-links a:hover {
+  color: #ffd54f;
 }
 
-.footer-social {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.footer-social .social-icons {
+.social-icons {
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
 }
 
 .social-icons a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: #fff;
-  color: var(--color-principal, #0e3a5d);
+  color: #ffd54f;
   font-size: 1.4rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
 
 .social-icons a:hover {
-  background-color: var(--color-acento, #ffd54f);
-  color: #0e3a5d;
-  transform: translateY(-2px) scale(1.1);
+  transform: scale(1.2);
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 2rem;
   padding-top: 1.5rem;
   text-align: center;
   font-size: 0.85rem;
 }
 
-.footer-bottom .legal-links {
+.legal-links {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   gap: 1.5rem;
-  margin: 1rem 0 0.5rem;
+  justify-content: center;
+  margin-bottom: 0.5rem;
 }
+
+.legal-links a {
+  color: #f0f4f8;
+  text-decoration: none;
+}
+
+.legal-links a:hover {
+  color: #ffd54f;
+}
+
 
 @media (max-width: 768px) {
   .hero {

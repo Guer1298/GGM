@@ -13,124 +13,235 @@
 /* ====================================
    HERO PRINCIPAL - DISEÑO PROFESIONAL
 ==================================== */
+
 .hero-section {
-  background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
-  padding: 5rem 2rem;
+  background: linear-gradient(
+      rgba(14, 58, 93, 0.75), 
+      rgba(14, 58, 93, 0.65)
+    ),
+    url('../assets/img/somos.png') center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 16px;
+  color: #fff;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  padding: 6rem 2rem;
   position: relative;
   overflow: hidden;
-  z-index: 1;
+  isolation: isolate;
 }
 
-/* Círculo decorativo animado (valor añadido visual) */
+/* Fondo con filtros y zoom suave */
 .hero-section::before {
-  content: "";
+  content: '';
   position: absolute;
-  width: 250px;
-  height: 250px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  top: -60px;
-  right: -60px;
-  z-index: 0;
-  animation: floatCircle 8s ease-in-out infinite alternate;
+  inset: 0;
+  background: inherit;
+  transform: scale(1.05);
+  filter: brightness(0.85) contrast(1.1) saturate(1.2) blur(1px);
+  z-index: -2;
+  transition: transform 8s ease;
 }
 
-/* Animación del decorativo */
+.hero-section:hover::before {
+  transform: scale(1.1);
+}
+
+/* Degradado superior para mejorar contraste */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom, 
+    rgba(14, 58, 93, 0.85) 0%, 
+    rgba(14, 58, 93, 0.6) 50%, 
+    rgba(14, 58, 93, 0.85) 100%
+  );
+  z-index: -1;
+}
+
+/* Título */
+.hero-section h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Subtítulo */
+.hero-section .lead {
+  font-size: 1.25rem;
+  margin: 1.5rem auto;
+  max-width: 720px;
+  color: #f0f4f8;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  animation: fadeInUp 1.5s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Cita */
+.hero-section blockquote {
+  color: #ffd54f;
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+  opacity: 0;
+  animation: fadeInUp 2s ease forwards;
+  animation-delay: 0.6s;
+}
+
+/* Animación flotante decorativa */
 @keyframes floatCircle {
   0% {
     transform: translateY(0);
   }
+  50% {
+    transform: translateY(15px);
+  }
   100% {
-    transform: translateY(30px);
+    transform: translateY(0);
   }
 }
 
-/* Contenido principal */
-.hero-section h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--color-principal, #0e3a5d);
-  margin-bottom: 1rem;
-  position: relative;
-  z-index: 2;
+/* Animación de entrada suave */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.hero-section .lead {
-  font-size: 1.25rem;
-  color: #1a1a1a;
-  max-width: 720px;
-  margin: 0 auto;
-  line-height: 1.6;
-  position: relative;
-  z-index: 2;
+/* Elementos decorativos flotantes */
+.hero-section .decorative-circle {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  backdrop-filter: blur(2px);
+  z-index: -1;
+  animation: floatCircle 4s ease-in-out infinite;
 }
 
-/* Cita opcional */
-.hero-section blockquote {
-  margin-top: 2rem;
-  font-style: italic;
-  font-size: 1.05rem;
-  color: #555;
-  position: relative;
-  z-index: 2;
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
+.hero-section .circle-1 {
+  width: 120px;
+  height: 120px;
+  top: 10%;
+  left: 5%;
 }
+
+.hero-section .circle-2 {
+  width: 80px;
+  height: 80px;
+  bottom: 15%;
+  right: 10%;
+  animation-delay: 1s;
+}
+
+.hero-section .circle-3 {
+  width: 60px;
+  height: 60px;
+  top: 20%;
+  right: 20%;
+  animation-delay: 0.5s;
+}
+
+
+
 
 /* ================================
    HISTORIA
 ================================== */
 .history-section {
   margin-top: 4rem;
-  padding: 3rem 2rem;
+  padding: 4rem 2rem;
   background: linear-gradient(135deg, #f9fbfd, #eef4f8);
   border-left: 6px solid var(--color-principal, #0e3a5d);
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  isolation: isolate;
 }
 
-/* Detalle decorativo opcional */
-.history-section::before {
+.history-section:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08);
+}
+
+/* Elementos decorativos dinámicos */
+.history-section::before,
+.history-section::after {
   content: "";
   position: absolute;
-  top: -30px;
-  right: -30px;
-  width: 120px;
-  height: 120px;
-  background: rgba(14, 58, 93, 0.05);
   border-radius: 50%;
   z-index: 0;
 }
 
+.history-section::before {
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  background: rgba(14, 58, 93, 0.05);
+  animation: floatCircle 6s ease-in-out infinite;
+}
+
+.history-section::after {
+  bottom: -50px;
+  left: -50px;
+  width: 180px;
+  height: 180px;
+  background: rgba(14, 58, 93, 0.03);
+  animation: floatCircle 8s ease-in-out infinite reverse;
+}
+
+/* Título */
 .history-section h2 {
-  font-size: 2rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   color: var(--color-principal, #0e3a5d);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   position: relative;
   z-index: 1;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
 }
 
+/* Párrafos */
 .history-section p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #333;
-  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: #334155;
+  max-width: 760px;
+  margin: 0 auto 1.25rem;
   position: relative;
   z-index: 1;
 }
 
-/* Interactividad sutil */
-.history-section:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+/* Texto destacado */
+.history-section strong {
+  color: var(--color-principal, #0e3a5d);
+  font-weight: 600;
 }
+
+/* Animación decorativa */
+@keyframes floatCircle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
+
 
 
 /* ================================
@@ -140,115 +251,198 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 3.5rem;
   justify-content: center;
 }
 
 /* Caja individual */
 .grid-2 article {
   flex: 1 1 320px;
-  background: linear-gradient(135deg, #f0faff 0%, #eef6f8 100%);
+  background: linear-gradient(135deg, #f9fbfd 0%, #eef4f8 100%);
   border-left: 5px solid var(--color-principal, #0e3a5d);
-  border-radius: 10px;
-  padding: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px;
+  padding: 2.2rem;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
   position: relative;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  isolation: isolate;
 }
 
-/* Interacción */
 .grid-2 article:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
 }
 
 /* Encabezado */
 .grid-2 h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   color: var(--color-principal, #0e3a5d);
-  font-size: 1.6rem;
-  margin-bottom: 0.75rem;
-  font-weight: 700;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
 }
 
-/* Texto descriptivo */
+.grid-2 h3 i {
+  color: var(--color-acento, #ffd54f);
+  font-size: 1.4rem;
+}
+
+/* Texto */
 .grid-2 p {
-  font-size: 1rem;
-  color: #444;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #334155;
+  line-height: 1.75;
   margin-bottom: 0;
 }
 
-/* Ícono decorativo opcional */
+/* Decorativo elegante (círculo transparente) */
 .grid-2 article::before {
-  content: "★";
-  font-size: 1.5rem;
-  color: var(--color-acento, #ffd54f);
+  content: "";
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  opacity: 0.2;
+  top: -30px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  background: rgba(14, 58, 93, 0.04);
+  border-radius: 50%;
+  z-index: 0;
+  animation: floatCircle 5s ease-in-out infinite;
 }
+
+/* Segunda figura decorativa */
+.grid-2 article::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: -40px;
+  width: 140px;
+  height: 140px;
+  background: rgba(14, 58, 93, 0.03);
+  border-radius: 50%;
+  z-index: 0;
+  animation: floatCircle 7s ease-in-out infinite reverse;
+}
+
+/* Animación decorativa */
+@keyframes floatCircle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+}
+
 
 /* ================================
    VALORES
 ================================== */
 .values-section {
   margin-top: 4rem;
-  padding: 2rem 1rem;
-  background: linear-gradient(to right, #f5faff, #eef6f8);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #f5faff, #eef6f8);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .values-section h2 {
-  margin-bottom: 2rem;
-  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.75rem);
   color: var(--color-principal, #0e3a5d);
   text-align: center;
-  font-weight: 700;
+  font-weight: 800;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-/* Lista de valores con layout responsivo */
+/* Grid responsivo */
 .values-list {
   list-style: none;
   padding-left: 0;
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Item de valor */
+/* Card de cada valor */
 .values-list li {
   background-color: #ffffff;
-  padding: 1.5rem 1.75rem;
+  padding: 2rem;
   border-left: 5px solid var(--color-principal, #0e3a5d);
-  border-radius: 8px;
+  border-radius: 14px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
   display: flex;
   align-items: flex-start;
   gap: 1.25rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+  z-index: 1;
 }
 
-/* Animación al pasar el cursor */
 .values-list li:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
 }
 
-/* Ícono */
+/* Ícono del valor */
 .values-list li i {
   color: var(--color-acento, #ffd54f);
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   flex-shrink: 0;
 }
 
-/* Texto del valor */
+/* Texto */
 .values-list li span {
-  font-size: 1.05rem;
-  color: #333;
-  line-height: 1.5;
+  font-size: 1.1rem;
+  color: #334155;
+  line-height: 1.7;
 }
+
+/* Decoración flotante */
+.values-section::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 180px;
+  height: 180px;
+  background: rgba(14, 58, 93, 0.03);
+  border-radius: 50%;
+  z-index: 0;
+  animation: floatCircle 8s ease-in-out infinite;
+}
+
+.values-section::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 220px;
+  height: 220px;
+  background: rgba(14, 58, 93, 0.025);
+  border-radius: 50%;
+  z-index: 0;
+  animation: floatCircle 10s ease-in-out infinite reverse;
+}
+
+/* Animación decorativa */
+@keyframes floatCircle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
+
 
 /* ================================
    LLAMADO A LA ACCIÓN
