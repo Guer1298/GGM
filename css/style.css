@@ -378,7 +378,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #0e3a5d;
+  
 }
 
 .hero::before {
@@ -386,7 +386,7 @@ img {
   position: absolute;
   inset: 0;
   background: url('../assets/img/Hero1.png') center/cover no-repeat;
-  filter: brightness(0.6) contrast(1.1) saturate(1.2);
+  
   transform: scale(1.05);
   transition: transform 8s ease;
   z-index: -2;
@@ -400,7 +400,7 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(14, 58, 93, 0.7), rgba(14, 58, 93, 0.3));
+  
   backdrop-filter: blur(2px);
   z-index: -1;
 }
@@ -477,7 +477,7 @@ img {
 
 .btn:hover,
 .btn:focus {
-  background-color: #164d79;
+  background-color: #fcf9fc;
   transform: scale(1.03);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   outline: none;
@@ -492,95 +492,113 @@ img {
 /* ==========================================
    VALORES / PILARES FUNDACIONALES
 ========================================== */
-.valores-section {
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #f9fdfb 0%, #eef6f8 100%);
-  border-radius: 16px;
+.pilares-section {
+  background: #f5f9fc;
+  padding: 6rem 2rem;
   text-align: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
 }
 
-.valores-section::before {
+.section-title {
+  font-size: 2.8rem;
+  color: #1c2d40;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.versiculo {
+  font-size: 1.25rem;
+  color: #5d6d7e;
+  font-style: italic;
+  margin: 0 auto 4rem;
+  max-width: 720px;
+}
+
+.pilares-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.pilar {
+  position: relative;
+  height: 360px;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.12);
+}
+
+.pilar::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle at 20% 20%, rgba(255, 223, 186, 0.1) 0%, transparent 70%),
-                    radial-gradient(circle at 80% 80%, rgba(186, 255, 234, 0.1) 0%, transparent 70%);
-  z-index: -1;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.15));
+  z-index: 1;
+  transition: background 0.3s ease;
 }
 
-.valores-section h2 {
-  font-size: clamp(2rem, 5vw, 2.8rem);
-  color: var(--color-principal, #0e3a5d);
-  margin-bottom: 2.5rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.pilar-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  color: #fff;
+  text-align: left;
 }
 
-/* Grid adaptable */
-.valores-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  padding: 0 1rem;
-}
-
-/* Card de cada valor */
-.valores-grid article {
-  background-color: #ffffff;
-  padding: 2rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.valores-grid article:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-}
-
-/* Imagen / ícono visual */
-.icono-valor {
-  width: 100%;
-  max-width: 220px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-article:hover .icono-valor {
-  transform: scale(1.05);
-}
-
-/* Tipografía y contenido */
-.valores-grid strong {
+.pilar h3 {
   font-size: 1.5rem;
-  color: var(--color-principal, #0e3a5d);
-  margin-bottom: 0.5rem;
-  display: block;
   font-weight: 700;
+  margin-bottom: 0.6rem;
 }
 
-.valores-grid p {
+.pilar p {
   font-size: 1rem;
-  color: #444;
   line-height: 1.6;
-  margin: 0 auto;
-  max-width: 90%;
+  color: #f0f0f0;
 }
+
+.pilar:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Background images */
+.pilar-fisico {
+  background-image: url('../assets/img/image2.png');
+}
+.pilar-intelectual {
+  background-image: url('../assets/img/image3.png');
+}
+.pilar-espiritual {
+  background-image: url('../assets/img/image4.png');
+}
+.pilar-social {
+  background-image: url('../assets/img/image5.png');
+}
+
+/* Responsive text and layout */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .versiculo {
+    font-size: 1.05rem;
+  }
+
+  .pilar {
+    height: 300px;
+  }
+
+  .pilar-content {
+    padding: 1.5rem;
+  }
+}
+
 
 
 
