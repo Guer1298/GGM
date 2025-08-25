@@ -21,49 +21,59 @@
 
   <main class="container home">
     <!-- Hero principal con imagen de fondo -->
+  
     <section class="hero fade-in" aria-labelledby="hero-title">
   <div class="hero-overlay">
-    
-    <h1 id="hero-title">Educación con Propósito Eterno</h1>
-    <p class="lead">Formamos integralmente desde una cosmovisión cristiana, con impacto social real en nuestras comunidades.</p>
-    <a href="./pages/quienes-somos.html" class="btn">Conócenos</a>
+    <!-- Chip de vidrio opcional: asegura contraste sin tapar la foto -->
+    <div class="hero-chip">
+      <h1 id="hero-title">Educación con Propósito Eterno</h1>
+      <p class="lead">
+        Formamos integralmente desde una cosmovisión cristiana, con impacto social real en nuestras comunidades.
+      </p>
+      <a href="./pages/quienes-somos.html" class="btn">Conócenos</a>
+    </div>
   </div>
 </section>
 
 
 
+
    <!-- Sección de pilares con base en Lucas 2:52 -->
-<section class="pilares-section" id="pilares">
+<section class="pilares-section" id="pilares" aria-labelledby="titulo-pilares">
   <div class="container">
-    <h2 class="section-title">Nuestros Pilares</h2>
-    <p class="versiculo">“Y Jesús crecía en sabiduría, y en estatura, y en gracia para con Dios y los hombres” – Lucas 2:52</p>
+    <h2 class="section-title" id="titulo-pilares">Nuestros Pilares</h2>
+    <p class="versiculo">“Y Jesús crecía en sabiduría, y en estatura, y en gracia para con Dios y los hombres” – <cite>Lucas 2:52</cite></p>
 
     <div class="pilares-grid">
 
-      <article class="pilar pilar-fisico">
+      <!-- Pilar Físico -->
+      <article class="pilar pilar-fisico" role="article" aria-labelledby="pilar-fisico">
         <div class="pilar-content">
-          <h3>Físico</h3>
+          <h3 id="pilar-fisico">Físico</h3>
           <p><strong>"Y Jesús crecía..."</strong> Este aspecto se fortalece mediante actividades lúdicas y deportivas según la edad, promoviendo un desarrollo saludable que potencie el aprendizaje.</p>
         </div>
       </article>
 
-      <article class="pilar pilar-intelectual">
+      <!-- Pilar Intelectual -->
+      <article class="pilar pilar-intelectual" role="article" aria-labelledby="pilar-intelectual">
         <div class="pilar-content">
-          <h3>Intelectual</h3>
+          <h3 id="pilar-intelectual">Intelectual</h3>
           <p><strong>"En sabiduría..."</strong> Fomentamos una inteligencia crítica y reflexiva, formando estudiantes capaces de transformar problemas en soluciones responsables e inteligentes.</p>
         </div>
       </article>
 
-      <article class="pilar pilar-espiritual">
+      <!-- Pilar Espiritual -->
+      <article class="pilar pilar-espiritual" role="article" aria-labelledby="pilar-espiritual">
         <div class="pilar-content">
-          <h3>Espiritual</h3>
+          <h3 id="pilar-espiritual">Espiritual</h3>
           <p><strong>"En gracia para con Dios..."</strong> Con actividades como devocionales y talleres, guiamos a los estudiantes a fortalecer su relación con Dios y cultivar valores como el amor, respeto y justicia.</p>
         </div>
       </article>
 
-      <article class="pilar pilar-social">
+      <!-- Pilar Social -->
+      <article class="pilar pilar-social" role="article" aria-labelledby="pilar-social">
         <div class="pilar-content">
-          <h3>Social</h3>
+          <h3 id="pilar-social">Social</h3>
           <p><strong>"Y con los hombres..."</strong> Promovemos una convivencia armónica y ética, educando personas responsables que aporten a una sociedad más justa y solidaria.</p>
         </div>
       </article>
@@ -71,6 +81,7 @@
     </div>
   </div>
 </section>
+
 
 
 
@@ -98,6 +109,72 @@
 </ul>
 
     </section>
+
+
+    <!-- Niveles de Educación -->
+<section class="niveles-section fade-in" id="niveles" aria-labelledby="titulo-niveles">
+  <div class="container">
+    <header class="niveles-header">
+      <h2 id="titulo-niveles">Niveles de Educación</h2>
+      <p class="niveles-sub">Acompañamos el desarrollo integral desde la primera infancia hasta el ingreso a la educación superior.</p>
+    </header>
+
+    <ol class="niveles-grid" role="list">
+      <!-- Preescolar / Transición -->
+      <li class="nivel-card" aria-labelledby="nivel-preescolar">
+        <div class="nivel-icon"><i data-lucide="baby"></i></div>
+        <div class="nivel-body">
+          <h3 id="nivel-preescolar">Preescolar / Transición</h3>
+          <p><strong>Edades:</strong> 5–6 años · <strong>Grado:</strong> Transición (0°)</p>
+          <p>Juego, exploración y hábitos básicos que potencian el lenguaje, la motricidad y la dimensión socioemocional.</p>
+        </div>
+        <div class="nivel-meta">
+          <span class="chip">Inicio del proceso</span>
+          <!-- <a href="#" class="nivel-link">Ver malla</a> -->
+        </div>
+      </li>
+
+      <!-- Primaria -->
+      <li class="nivel-card" aria-labelledby="nivel-primaria">
+        <div class="nivel-icon"><i data-lucide="book-open"></i></div>
+        <div class="nivel-body">
+          <h3 id="nivel-primaria">Primaria</h3>
+          <p><strong>Grados:</strong> 1° a 5°</p>
+          <p>Fortalecemos lectura, escritura, pensamiento lógico-matemático y valores para la vida comunitaria.</p>
+        </div>
+        <div class="nivel-meta">
+          <span class="chip">Bases académicas</span>
+        </div>
+      </li>
+
+      <!-- Bachillerato -->
+      <li class="nivel-card" aria-labelledby="nivel-bachillerato">
+        <div class="nivel-icon"><i data-lucide="graduation-cap"></i></div>
+        <div class="nivel-body">
+          <h3 id="nivel-bachillerato">Bachillerato</h3>
+          <p><strong>Grados:</strong> 6° a 9°</p>
+          <p>Profundización por áreas, pensamiento crítico y proyectos que conectan el conocimiento con su contexto.</p>
+        </div>
+        <div class="nivel-meta">
+          <span class="chip">Formación integral</span>
+        </div>
+      </li>
+
+      <!-- Media -->
+      <li class="nivel-card" aria-labelledby="nivel-media">
+        <div class="nivel-icon"><i data-lucide="waypoints"></i></div>
+        <div class="nivel-body">
+          <h3 id="nivel-media">Media</h3>
+          <p><strong>Grados:</strong> 10° y 11°</p>
+          <p>Orientación vocacional, competencias para la vida y preparación para pruebas externas y educación superior.</p>
+        </div>
+        <div class="nivel-meta">
+          <span class="chip">Proyección y transición</span>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
 
     <!-- Llamado a la acción destacado con imagen -->
     <section class="llamado-accion fade-in" style="background-color: #e0f2f1; text-align: center;">
@@ -147,6 +224,9 @@
   <script>
   lucide.createIcons();
 </script>
+
+<script>window.addEventListener('load',()=>document.querySelector('.hero')?.classList.add('loaded'))</script>
+
 
 </body>
 </html>

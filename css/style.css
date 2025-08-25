@@ -366,92 +366,142 @@ img {
    Sección Hero - Profesional
 ============================ */
 
+/* HERO impactante */
 .hero {
   position: relative;
   color: #fff;
   text-align: center;
-  padding: 7rem 2rem;
+  padding: clamp(4rem, 6vw, 7rem) 2rem;
   border-radius: var(--radio-borde, 12px);
   overflow: hidden;
   isolation: isolate;
-  min-height: 70vh;
+  min-height: 85vh; /* un poco más alto para impacto */
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
+/* Imagen con efecto Ken Burns */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   background: url('../assets/img/Hero1.png') center/cover no-repeat;
-  
   transform: scale(1.05);
-  transition: transform 8s ease;
+  transition: transform 14s ease;
   z-index: -2;
+  will-change: transform;
 }
-
 .hero:hover::before {
   transform: scale(1.1);
 }
 
+/* Overlay con degradado sutil (sin difuminar) */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  
-  backdrop-filter: blur(2px);
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.15) 60%,
+      rgba(0, 0, 0, 0.05) 100%
+  );
+  transition: background 0.6s ease;
   z-index: -1;
 }
+.hero:hover::after {
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.65) 0%,
+      rgba(0, 0, 0, 0.25) 60%,
+      rgba(0, 0, 0, 0.1) 100%
+  );
+}
 
+/* Contenido */
 .hero-overlay {
   z-index: 1;
   max-width: 960px;
   margin: 0 auto;
   padding: 1rem;
-  
-  
-  
-  
+  animation: fadeUp 1.2s ease forwards;
+  opacity: 0;
 }
 
+/* Animación */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Título */
 .hero h1 {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 800;
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  font-weight: 900;
   margin-bottom: 1rem;
-  line-height: 1.2;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  line-height: 1.15;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
 }
 
+/* Subtítulo */
 .hero .lead {
-  font-size: 1.25rem;
-  margin: 1rem auto;
-  max-width: 700px;
-  color: #f0f4f8;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+  font-size: clamp(1rem, 1.3vw, 1.35rem);
+  margin: 1rem auto 1.5rem;
+  max-width: 720px;
+  color: #f5f7fa;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+  animation: fadeUp 1.6s ease forwards;
+  opacity: 0;
 }
 
+/* Delay animaciones */
+.hero h1 { animation-delay: 0.2s; }
+.hero .lead { animation-delay: 0.5s; }
+.hero .btn { animation-delay: 0.8s; }
+
+/* Botón CTA */
 .hero .btn {
-  margin-top: 2rem;
-  padding: 0.9rem 2rem;
-  background-color: var(--color-acento, #ffd54f);
-  color: #0e3a5d;
-  border-radius: 12px;
+  margin-top: 1rem;
+  padding: 1rem 2.2rem;
+  background: linear-gradient(135deg, #ffd54f, #fbc02d);
+  color: #0e2a47;
+  border-radius: 50px;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.05rem;
   text-decoration: none;
   display: inline-block;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35),
+              0 0 12px rgba(255, 213, 79, 0.4);
+  opacity: 0;
+  animation: fadeUp 1.8s ease forwards;
 }
-
 .hero .btn:hover,
 .hero .btn:focus {
-  background-color: #fbc02d;
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+  background: linear-gradient(135deg, #fbc02d, #ffa000);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.4),
+              0 0 18px rgba(255, 213, 79, 0.6);
 }
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .hero::before,
+  .hero,
+  .hero-overlay,
+  .hero h1,
+  .hero .lead,
+  .hero .btn {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+
 
 
 
@@ -500,7 +550,7 @@ img {
 
 .section-title {
   font-size: 2.8rem;
-  color: #1c2d40;
+  color: #ffde59;
   font-weight: 800;
   margin-bottom: 0.5rem;
 }
@@ -553,6 +603,7 @@ img {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.6rem;
+  color: #ffd54f;
 }
 
 .pilar p {
@@ -598,6 +649,8 @@ img {
     padding: 1.5rem;
   }
 }
+
+
 
 
 
@@ -674,6 +727,100 @@ img {
   margin: 0;
   max-width: 95%;
 }
+
+
+/* ===== Niveles de Educación ===== */
+/* ===== Niveles de Educación (versión clara y fresca) ===== */
+.niveles-section{
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
+  background: #f9fafb; /* fondo suave */
+}
+
+.niveles-header{
+  text-align:center;
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  padding: 0 1rem;
+}
+.niveles-header h2{
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+  margin: 0 0 .5rem;
+  color: #1e3a8a; /* azul más académico */
+}
+.niveles-sub{
+  color:#475569; /* gris azulado más legible */
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+.niveles-grid{
+  list-style:none;
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 72rem;
+  display:grid;
+  gap: clamp(1rem, 2.4vw, 1.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.nivel-card{
+  display:grid;
+  grid-template-columns: auto 1fr;
+  gap: .9rem 1rem;
+  align-items:flex-start;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+  border: 1px solid rgba(0,0,0,.05);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.nivel-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,.1);
+  border-color: rgba(59,130,246,.25); /* azul claro */
+}
+
+.nivel-icon{
+  width: 52px; height: 52px;
+  display:grid; place-items:center;
+  border-radius: 14px;
+  background: #e0f2fe; /* celeste claro */
+  color: #0369a1;     /* azul vivo */
+}
+.nivel-icon i{ width: 26px; height: 26px; }
+
+.nivel-body h3{
+  margin: 0 0 .35rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0f172a; /* casi negro */
+}
+.nivel-body p{
+  margin: .15rem 0;
+  color:#334155; /* gris oscuro legible */
+}
+
+.nivel-meta{
+  grid-column: 1 / -1;
+  display:flex; gap:.5rem; flex-wrap:wrap; align-items:center;
+}
+.chip{
+  display:inline-block;
+  padding: .3rem .75rem;
+  border-radius: 999px;
+  background: #dbeafe; /* azul pastel */
+  color:#1e40af;       /* azul profundo */
+  font-size:.8rem; font-weight:700;
+}
+.nivel-link{
+  margin-left:auto;
+  font-weight:700;
+  text-decoration:none;
+  color:#2563eb;
+}
+.nivel-link:hover{ text-decoration:underline; }
+
+
 
 /* ==========================================
    Sección de Llamado a la Acción (CTA)

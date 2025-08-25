@@ -98,7 +98,7 @@
     <h3><i class="fas fa-dove" aria-hidden="true"></i> Misión</h3>
     <p>
       Nuestra misión es <strong>formar ciudadanos íntegros</strong>, guiados por los principios de la <strong>fe cristiana</strong>. 
-      Fomentamos el <strong>desarrollo espiritual, académico y humano</strong> a través de una educación que inspira, 
+      Fomentando el <strong>desarrollo espiritual, académico y humano</strong> a través de una educación que inspira, 
       promueve el pensamiento crítico, la excelencia y el servicio amoroso a la comunidad.
     </p>
   </article>
@@ -115,28 +115,87 @@
 
 
     <!-- Valores Institucionales -->
-    <section class="values-section fade-in" aria-labelledby="titulo-valores">
-  <h2 id="titulo-valores">Valores Institucionales</h2>
-  <ul class="values-list">
-    <li>
-      <i class="fas fa-cross" aria-hidden="true"></i>
-      <strong>Fe:</strong>
-      Nuestra brújula espiritual y fundamento de cada decisión educativa, guiando con propósito y esperanza.
+<section class="values-section" aria-labelledby="titulo-valores">
+  <div class="values-header">
+    <h2 id="titulo-valores">Valores Institucionales</h2>
+    <p class="values-sub">Formamos integralmente con una cosmovisión cristiana que transforma vidas y comunidades.</p>
+  </div>
+
+  <ul class="values-list" role="list">
+    <!-- FE -->
+    <li class="value-card reveal" tabindex="0" aria-label="Valor: Fe">
+      <figure class="value-figure" aria-hidden="true">
+        <!-- Cross (glow) -->
+        <svg class="ico ico-cross" viewBox="0 0 64 64">
+          <g class="glow"></g>
+          <path d="M28 6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v18h18a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H36v26a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V32H10a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h18z" fill="currentColor"/>
+        </svg>
+      </figure>
+      <div class="value-content">
+        <h3>Fe</h3>
+        <p>Nuestra brújula espiritual: fundamenta decisiones, inspira esperanza y orienta el propósito educativo.</p>
+      </div>
     </li>
-    <li>
-      <i class="fas fa-hand-holding-heart" aria-hidden="true"></i>
-      <strong>Servicio:</strong>
-      Comprometidos con poner nuestras capacidades al servicio de la comunidad, reflejando amor al prójimo.
+
+    <!-- AMOR -->
+    <li class="value-card reveal" tabindex="0" aria-label="Valor: Amor">
+      <figure class="value-figure" aria-hidden="true">
+        <!-- Heart (beat) -->
+        <svg class="ico ico-heart" viewBox="0 0 64 64">
+          <path d="M32 56s-4.8-4.32-9.6-8.7C14.3 39.8 8 34.06 8 25.9 8 19.1 13.4 14 20 14c4.1 0 7.7 2.04 10 5.16C32.3 16.04 35.9 14 40 14c6.6 0 12 5.1 12 11.9 0 8.16-6.3 13.9-14.4 21.4C36.8 51.68 32 56 32 56z" fill="currentColor"/>
+        </svg>
+      </figure>
+      <div class="value-content">
+        <h3>Amor</h3>
+        <p>Servimos con empatía y cercanía, poniendo talentos y recursos al servicio del prójimo.</p>
+      </div>
     </li>
-    <li>
-      <i class="fas fa-shield-alt" aria-hidden="true"></i>
-      <strong>Integridad:</strong>
-      Vivimos con coherencia, honestidad y transparencia, siendo ejemplo en cada acción.
+
+    <!-- INTEGRIDAD -->
+    <li class="value-card reveal" tabindex="0" aria-label="Valor: Integridad">
+      <figure class="value-figure" aria-hidden="true">
+        <!-- Shield (shine) -->
+        <svg class="ico ico-shield" viewBox="0 0 64 64">
+          <path d="M32 6l18 6v14c0 14-9.5 22.4-18 26-8.5-3.6-18-12-18-26V12l18-6z" fill="currentColor"/>
+          <path class="check" d="M23 33l6 6 12-12" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </figure>
+      <div class="value-content">
+        <h3>Integridad</h3>
+        <p>Actuamos con coherencia, honestidad y transparencia; lo que enseñamos, lo vivimos.</p>
+      </div>
     </li>
-    <li>
-      <i class="fas fa-heart" aria-hidden="true"></i>
-      <strong>Compasión:</strong>
-      Educamos con amor, empatía y respeto, entendiendo las realidades y necesidades de cada ser humano.
+
+    <!-- UNIDAD -->
+    <li class="value-card reveal" tabindex="0" aria-label="Valor: Unidad">
+      <figure class="value-figure" aria-hidden="true">
+        <!-- Unity (hands link) -->
+        <svg class="ico ico-unity" viewBox="0 0 64 64">
+          <path d="M10 34c8 0 8-8 16-8s8 8 16 8 8-8 16-8" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="16" cy="20" r="4" fill="currentColor"/>
+          <circle cx="32" cy="26" r="4" fill="currentColor"/>
+          <circle cx="48" cy="20" r="4" fill="currentColor"/>
+        </svg>
+      </figure>
+      <div class="value-content">
+        <h3>Unidad</h3>
+        <p>Construimos comunidad con respeto y colaboración, celebrando la diversidad de dones.</p>
+      </div>
+    </li>
+
+    <!-- SERVICIO -->
+    <li class="value-card reveal" tabindex="0" aria-label="Valor: Servicio">
+      <figure class="value-figure" aria-hidden="true">
+        <!-- Service (helping hand) -->
+        <svg class="ico ico-service" viewBox="0 0 64 64">
+          <path d="M8 40c8-2 16-6 24-6 6 0 12 2 24 8v6c-12-6-18-8-24-8-8 0-16 4-24 6z" fill="currentColor"/>
+          <path d="M18 28c4-4 10-8 14-8 6 0 8 6 14 10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </figure>
+      <div class="value-content">
+        <h3>Servicio</h3>
+        <p>Disponibilidad y excelencia para responder a necesidades reales con soluciones concretas.</p>
+      </div>
     </li>
   </ul>
 </section>
@@ -164,5 +223,24 @@
 
   <!-- Script -->
   <script src="../js/main.js" defer></script>
+  <script>
+  // Intersection Observer para revelar tarjetas al entrar en viewport
+  (function(){
+    const items = document.querySelectorAll('.value-card.reveal');
+    if(!('IntersectionObserver' in window) || !items.length){
+      items.forEach(el => el.classList.add('is-visible'));
+      return;
+    }
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    items.forEach(el=>io.observe(el));
+  })();
+</script>
 </body>
 </html>
