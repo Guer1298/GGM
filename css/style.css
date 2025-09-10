@@ -936,6 +936,7 @@ img {
 .footer-links,
 .footer-social {
   flex: 1 1 200px;
+   color: #fff;
 }
 
 .footer-links h3,
